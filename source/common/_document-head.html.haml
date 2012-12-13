@@ -1,0 +1,19 @@
+%head
+	%title=$siteTitle
+	%meta(charset="utf-8")
+	%meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+
+	/ Mobile viewport optimized
+	%meta(content='width=device-width, initial-scale=1.0, maximum-scale=1' name='viewport')
+
+	%meta(name="description" content="")
+
+	/ includes print styles
+	= stylesheet_link_tag :main
+	
+	= javascript_include_tag :loader
+
+	/ use IE-specific styles for older versions
+	<!--[if lt IE 9]>
+	<link href="/css/ie.css" media="screen" rel="stylesheet" type="text/css" />
+	<![endif]-->

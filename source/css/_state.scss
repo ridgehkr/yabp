@@ -1,0 +1,153 @@
+// GRID
+// sidebar and main content areas
+#primary, #primary + #sidebar {
+	@media (max-width:$medium) {
+		width: 100%;
+		left: 0;
+		padding: 0 $outer-padding-mobile;
+	}
+}
+.layout-fifths {
+	@media (max-width:$medium) { // blocks go full-width at this point. it's up to child elements to know this
+		.layout-col {
+			width: 33.333333%;
+		}
+	}
+	@media (max-width:$small) {
+		.layout-col {
+			width: 49.999999%;
+		}
+	}
+	@media (max-width:$smallest) {
+		.layout-col {
+			width: 100%;
+		}
+	}
+}
+.layout-quarters {
+	@media (max-width:$medium) {
+		.layout-col {
+			width: 49.999999%;
+		}
+	}
+	@media (max-width:$small) {
+		.layout-col {
+			width: 100%;
+		}
+	}
+}
+.layout-thirds {
+	@media (max-width:$medium) {
+		&.layout-faux-columns:before {
+			display: none;
+		}
+		&.layout-faux-columns:after {
+			left: 50%;
+		}
+		.layout-col {
+			width: 49.999999%;
+		}
+		.layout-double-col {
+			width: 100%;
+		}
+	}
+	@media (max-width:$small) {
+		&.layout-faux-columns:before,
+		&.layout-faux-columns:after {
+			display: none;
+		}
+		.layout-col {
+			width: 100%;
+		}
+	}
+}
+.layout-halves {
+	@media (max-width:$medium) {
+		&.layout-faux-columns:before {
+			display: none;
+		}
+		.layout-col {
+			width: 100%;
+		}
+	}
+}
+// end grid
+
+// HEADER
+#logo {
+	@media (max-width:$medium) {
+		margin: 0 0 0 $outer-padding-mobile;
+		float: none;
+		margin: 0 auto;
+		max-width: 250px;
+		display: block;
+	}
+}
+#main-nav {
+	@media (max-width:$large) {
+		li {
+			font-size: 13px;
+		}
+	}
+	@media (max-width:$medium) {
+		padding: 0 $outer-padding-mobile;
+		width: 100%;
+		ul {
+			float: none;
+			text-align: center;
+		}
+	}
+	@media (max-width:$small) {
+		ul {
+			text-align: left;
+		}
+		li {
+			width: 49.999999%;
+		}
+	}
+}
+// end header
+
+// GENERICS
+a {
+	// since outline was removed in base styles, consider indications for the following states
+	&:hover {
+		text-decoration: none;
+	}
+	&:active {
+
+	}
+	&:focus {
+
+	}
+}
+
+blockquote {
+	@media (max-width:$small) {
+		margin-right: 0;
+		margin-left: 0;
+		&.aside-right, &.aside-left {
+			float: none;
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+// MEDIA FEATURE a.k.a. figure
+.media-feature {
+	@media (max-width:$smallest) {
+		width: 100%;
+		img, video, iframe {
+			width: 50%;
+			float: right;
+		}
+		.caption {
+			margin: 0;
+		}
+	}
+}
+// end media feature
+
+// end generics

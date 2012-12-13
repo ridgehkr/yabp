@@ -1,0 +1,101 @@
+// ANCHORS
+a {
+	&.more:before {
+		content: '»';
+		position: relative;
+		top: -1px;
+		@include inline-block;
+		padding-right: 4px;
+		font-size: em(22px);
+	}
+}
+// end anchors
+
+// LISTS
+.bullets {
+	li {
+		position: relative;
+		padding-left: $base-font-size / 2;
+		&:before {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			height: 100%;
+			content: '•';
+			line-height: $base-font-size * 1.3;
+			display: block;
+		}
+	}
+	ul {
+		margin-left: 8px;
+	}
+}
+// end lists
+
+// PRIMARY CONTENT
+// considering the primary content wrapper to be a module, at least for its appearance aspects
+#primary {
+	border-bottom: 1px dotted rgb(200, 200, 200);
+	&:last-child {
+		border-bottom: none;
+	}
+}
+// end primary content
+
+// HEADERS
+.hr-a {
+	font-family: $serif;
+	font-weight: lighter;
+	background: $text-color;
+	color: white;
+	padding: 12px 0;
+	margin: 0 0 20px;
+	a {
+		@include link-colors($text-color, $text-color, $text-color, $text-color, $text-color);
+	}
+}
+// end headers
+
+// MEDIA ELEMENTS
+.media-feature {
+	float: right;
+	margin: 0 0 8px 8px;
+	width: 33.333333%;
+	.caption, .proceed {
+		font-size: em(13px);	
+	}
+}
+
+// preserves the aspect ratio of videos embedded via YouTube, Vimeo, etc.
+.media-embed {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	object, embed, iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+// end media boxes
+
+// BLOCKQUOTES
+// using the element because there really isn't a reason to create a blockquote class
+blockquote {
+	background: rgb(199, 232, 255);
+	@include border-radius(5px);
+	padding: 18px;
+	margin: 18px 0;
+	&.aside-right {
+		float: right;
+		width: 62%;
+	}
+	&.aside-left {
+		float: left;
+		width: 62%;
+	}
+}
+// end blockquotes

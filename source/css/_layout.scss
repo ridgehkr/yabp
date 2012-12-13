@@ -1,0 +1,149 @@
+//================
+// GRID COMPONENTS
+//
+// directions: uncomment the grid components needed
+//================
+
+// can be used to wrap nearly anything
+.layout-container {
+	max-width: $outer-width;
+	margin: 0 auto;
+	@include clear;
+	overflow: hidden;
+}
+
+#main {
+	font-size: 0; // assumes children will be inline-block
+	margin-bottom: 20px;
+}
+
+// sidebar and main content areas
+#sidebar, #primary {
+	@include inline-block;
+	vertical-align: top;
+	font-size: $text-size;
+	position: relative;
+}
+#primary {
+	width: 77.999999%;
+	left: 22%;
+	.layout-container {
+		margin-bottom: 20px;
+		padding-bottom: 19px;
+	}
+	& + #sidebar {
+		right: 77.999999%;
+		width: 22%;
+	}
+}
+
+// HEADER
+#logo {
+	display: block;
+	float: left;
+	max-width: 250px;
+}
+#main-nav {
+	float: right;
+	width: auto;
+	ul {
+		margin: 0;
+		font-size: 0;
+		float: right;
+		text-align: right;
+	}
+	li {
+		font-size: $text-size;
+		@include inline-block;
+	}
+	a {
+		display: block;
+		padding: 6px 10px;
+	}
+}
+// end header
+
+// remove the whitespace between columns because of inline-block
+.layout-fifths, .layout-quarters, .layout-thirds, .layout-halves {
+	font-size: 0;
+}
+
+// insert the default font size back in
+.layout-col, .layout-double-col {
+	font-size: $text-size;
+	@include inline-block;
+	vertical-align: top;
+}
+
+// ===========================
+// FIVE-COLUMN GRID
+// ===========================
+.layout-fifths {
+	.layout-col {
+		width: 19.999999%;
+	}
+}
+
+// ===========================
+// FOUR-COLUMN GRID
+// ===========================
+.layout-quarters {
+	.layout-col {
+		width: 24.999999%;
+	}
+}
+
+// ===========================
+// THREE-COLUMN GRID
+// ===========================
+.layout-thirds {
+	position: relative;
+	.layout-col {
+		width: 33.333333%;
+	}
+	.layout-double-col {
+		width: 66.666666%;
+	}
+	// FAUX COLUMNS
+	&.layout-faux-columns:before { // full-height hack for thirds
+		position: absolute;
+		height: 100%;
+		width: 0;
+		left: 33.333333%;
+		top: 0;
+		content: '';
+		display: block;
+		border-right: 1px dotted;
+	}
+	&.layout-faux-columns:after { // full-height hack for thirds
+		position: absolute;
+		height: 100%;
+		width: 0;
+		right: 33.333333%;
+		top: 0;
+		content: '';
+		display: block;
+		border-right: 1px dotted;
+	}
+	// END .faux-columns
+}
+
+// ===========================
+// TWO-COLUMN GRID
+// ===========================
+.layout-halves {
+	position: relative;
+	.layout-col {
+		width: 49.999999%;
+	}
+	&.layout-faux-columns:before { // full-height hack for halves
+		position: absolute;
+		height: 100%;
+		width: 0;
+		left: 50%;
+		top: 0;
+		content: '';
+		display: block;
+		border-right: 1px dotted;
+	}
+}
