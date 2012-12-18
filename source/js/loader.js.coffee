@@ -11,7 +11,7 @@ Modernizr.load([
 	},
 	{
 		# Load jQuery
-		load: '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'
+		load: '//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js'
 		complete: ->
 			if !window.jQuery
 				Modernizr.load '/js/libs/jquery-1.8.3.min.js'
@@ -20,5 +20,5 @@ Modernizr.load([
 		# Load generic scripts for everyone
 		load: ['/js/script.js']
 	},
-	'/js/google-analytics.js'
+	'/js/google-analytics.js' # just the GA snippet typically found in the footer
 ])
