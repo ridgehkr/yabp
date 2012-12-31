@@ -1,3 +1,3 @@
 $ ->
-	# run post-load JS here
+	# jQuery code here
 	console?.log 'Hello, world!'

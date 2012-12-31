@@ -18,7 +18,6 @@ Modernizr.load([
 	},
 	{
 		# Load generic scripts for everyone
-		load: ['/js/script.js']
+		load: ['/js/script.js', '/js/google-analytics.js']
 	},
-	'/js/google-analytics.js' # just the GA snippet typically found in the footer
 ])

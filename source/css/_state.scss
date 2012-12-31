@@ -7,66 +7,66 @@
 		padding: 0 $outer-padding-mobile;
 	}
 }
-.layout-fifths {
+.l-fifths {
 	@media (max-width:$medium) { // blocks go full-width at this point. it's up to child elements to know this
-		.layout-col {
+		.l-col {
 			width: 33.333333%;
 		}
 	}
 	@media (max-width:$small) {
-		.layout-col {
+		.l-col {
 			width: 49.999999%;
 		}
 	}
 	@media (max-width:$smallest) {
-		.layout-col {
+		.l-col {
 			width: 100%;
 		}
 	}
 }
-.layout-quarters {
+.l-quarters {
 	@media (max-width:$medium) {
-		.layout-col {
+		.l-col {
 			width: 49.999999%;
 		}
 	}
 	@media (max-width:$small) {
-		.layout-col {
+		.l-col {
 			width: 100%;
 		}
 	}
 }
-.layout-thirds {
+.l-thirds {
 	@media (max-width:$medium) {
-		&.layout-faux-columns:before {
+		&.l-faux-columns:before {
 			display: none;
 		}
-		&.layout-faux-columns:after {
+		&.l-faux-columns:after {
 			left: 50%;
 		}
-		.layout-col {
+		.l-col {
 			width: 49.999999%;
 		}
-		.layout-double-col {
+		.l-double-col {
 			width: 100%;
 		}
 	}
 	@media (max-width:$small) {
-		&.layout-faux-columns:before,
-		&.layout-faux-columns:after {
+		&.l-faux-columns:before,
+		&.l-faux-columns:after {
 			display: none;
 		}
-		.layout-col {
+		.l-col {
 			width: 100%;
 		}
 	}
 }
-.layout-halves {
+.l-halves {
 	@media (max-width:$medium) {
-		&.layout-faux-columns:before {
+		&.l-faux-columns:before {
 			display: none;
 		}
-		.layout-col {
+		.l-col {
 			width: 100%;
 		}
 	}

@@ -5,7 +5,7 @@
 //================
 
 // can be used to wrap nearly anything
-.layout-container {
+.l-container {
 	max-width: $outer-width;
 	margin: 0 auto;
 	@include clear;
@@ -27,7 +27,12 @@
 #primary {
 	width: 77.999999%;
 	left: 22%;
-	.layout-container {
+	// assumes a sidebar will be used. add class full-width if no sidebar is desired
+	&.full-width {
+		width: 100%;
+		left: 0;
+	}
+	.l-container {
 		margin-bottom: 20px;
 		padding-bottom: 19px;
 	}
@@ -64,12 +69,12 @@
 // end header
 
 // remove the whitespace between columns because of inline-block
-.layout-fifths, .layout-quarters, .layout-thirds, .layout-halves {
+.l-fifths, .l-quarters, .l-thirds, .l-halves {
 	font-size: 0;
 }
 
 // insert the default font size back in
-.layout-col, .layout-double-col {
+.l-col, .l-double-col {
 	font-size: $text-size;
 	@include inline-block;
 	vertical-align: top;
@@ -78,8 +83,8 @@
 // ===========================
 // FIVE-COLUMN GRID
 // ===========================
-.layout-fifths {
-	.layout-col {
+.l-fifths {
+	.l-col {
 		width: 19.999999%;
 	}
 }
@@ -87,8 +92,8 @@
 // ===========================
 // FOUR-COLUMN GRID
 // ===========================
-.layout-quarters {
-	.layout-col {
+.l-quarters {
+	.l-col {
 		width: 24.999999%;
 	}
 }
@@ -96,16 +101,16 @@
 // ===========================
 // THREE-COLUMN GRID
 // ===========================
-.layout-thirds {
+.l-thirds {
 	position: relative;
-	.layout-col {
+	.l-col {
 		width: 33.333333%;
 	}
-	.layout-double-col {
+	.l-double-col {
 		width: 66.666666%;
 	}
 	// FAUX COLUMNS
-	&.layout-faux-columns:before { // full-height hack for thirds
+	&.l-faux-columns:before { // full-height hack for thirds
 		position: absolute;
 		height: 100%;
 		width: 0;
@@ -115,7 +120,7 @@
 		display: block;
 		border-right: 1px dotted;
 	}
-	&.layout-faux-columns:after { // full-height hack for thirds
+	&.l-faux-columns:after { // full-height hack for thirds
 		position: absolute;
 		height: 100%;
 		width: 0;
@@ -131,12 +136,12 @@
 // ===========================
 // TWO-COLUMN GRID
 // ===========================
-.layout-halves {
+.l-halves {
 	position: relative;
-	.layout-col {
+	.l-col {
 		width: 49.999999%;
 	}
-	&.layout-faux-columns:before { // full-height hack for halves
+	&.l-faux-columns:before { // full-height hack for halves
 		position: absolute;
 		height: 100%;
 		width: 0;

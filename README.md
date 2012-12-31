@@ -1,16 +1,15 @@
 Yet Another Boilerplate (YABP)
 ====
 
-This Middleman-based boilerplate was originally created to help me get a head start on new front-end development projects and includes:
-* [Middleman](http://middlemanapp.com/)
-* [HAML](http://haml.info/)
-* [HTML5 Boilerplate](http://html5boilerplate.com/)
-* [SASS](http://sass-lang.com/) with some help from [Compass](http://compass-style.org/)
+This Middleman boilerplate project was originally created to help me get a head start on new front-end development and uses SASS, HAML, and CoffeeScript.
+
+Core components are:
+* [Modernizr](http://modernizr.com/)
+* code borrowed from the [HTML5 Boilerplate](http://html5boilerplate.com/)
 * the [SMACSS](http://smacss.com/) approach
-* [CoffeeScript](http://coffeescript.org/)
 * [jQuery](http://jquery.com/)
-* [Sprockets](https://github.com/sstephenson/sprockets)
 * [Respond](https://github.com/scottjehl/Respond)
+* [Selectivizr](http://selectivizr.com/)
 
 Component Details
 ----
@@ -33,3 +32,39 @@ Component Details
   * all elements use the border-box box-sizing style
   * a few generic column layouts between two and five columns wide which resize and realign responsively
 * humans.txt and robots.txt
+
+Getting Started
+----
+
+### The Grid
+YABP comes with a very basic grid system. It's not intended to be an invasive, all-encompasing grid system such as Blueprint or Bootstrap's, just organizational blocks for sub-content layout.
+
+To constrain the width of your content to the defined ```$outer-width``` value inside ```css/main.scss```, wrap in a div with the class ```l-container```
+
+To create a column layout, create a wrapping div with the appriate class (```l-halves```, ```l-thirds```, ```l-quarters```, or ```l-fifths```), then create the appropriate number of child elements and give them the ```l-col``` class.
+
+For example, this will generate a three-column grid constrained by the max-width of ```$outer-width```:
+```haml
+.l-container
+    .l-thirds
+        .l-col This is column 1
+        .l-col This is column 2
+        .l-col This is column 3
+```
+
+You can create faux borders for the two and three-column layouts. This uses the ::before and ::after pseudo-elements to generate borders to match the height of the containing element, which means you don't need JavaScript to equalize the height of your columns to make their borders line up.
+
+To create faux columns, add the ```l-faux-columns``` class to your ```l-halves``` or ```l-thirds``` element. 
+
+Example:
+```haml
+.l-container
+    .l-halves.l-faux-columns
+        .l-col This is column 1
+        .l-col This is column 2
+```
+
+Legal Stuff
+----
+
+YABP is distributed under the MIT license

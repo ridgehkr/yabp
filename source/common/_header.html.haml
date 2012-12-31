@@ -1,7 +1,7 @@
 %header
-	.layout-container
+	.l-container
 		%a#logo{ :href => "#" }
-			=image_tag lorem.image('250x100')
+			%img{ :'data-src' => 'holder.js/250x100', :alt => '' }
 		%nav#main-nav
 			%ul
 				- for i in 1..5
