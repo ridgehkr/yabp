@@ -12,7 +12,7 @@ a {
 // end anchors
 
 // LISTS
-.bullets {
+.m-bullets {
 	li {
 		position: relative;
 		padding-left: $base-font-size / 2;
@@ -34,13 +34,12 @@ a {
 // end lists
 
 // HEADERS
-.hr-a {
+.m-hr-a {
 	font-family: $serif;
 	font-weight: normal;
 	color: $text-color;
 	padding: 12px 0;
 	margin: 0 0 20px;
-	font-size: 36px;
 	a {
 		@include link-colors($text-color, $text-color, $text-color, $text-color, $text-color);
 	}
@@ -50,7 +49,6 @@ a {
 	font-weight: lighter;
 	color: $text-color;
 	margin: 0 0 20px;
-	font-size: 26px;
 }
 // end headers
 
@@ -65,7 +63,7 @@ a {
 }
 
 // preserves the aspect ratio of videos embedded via YouTube, Vimeo, etc.
-.media-embed {
+.m-media-embed {
 	position: relative;
 	padding-bottom: 56.25%;
 	height: 0;

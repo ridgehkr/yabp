@@ -1,6 +1,8 @@
 .l-container
-	#primary
-		%h2.hr-a Primary Content
+	%header
+		%h1=link_to 'Site Name', '/'
+	#l-primary
+		%h2.m-hr-a Primary Content
 		
 		.l-container
 			%p=lorem.paragraph
@@ -20,11 +22,11 @@
 				.l-col
 					%h3 .halves
 					=lorem.paragraph
-					%ul.bullets
+					%ul.m-bullets
 						- for i in 1..2
 							%li
 								=lorem.words 3
-								%ul.bullets
+								%ul.m-bullets
 									- for i in 1..5
 										%li=lorem.words 3
 				.l-col
@@ -57,6 +59,6 @@
 					.l-col
 						%h3=".fifths column #{i}"
 						=lorem.paragraph
-	#sidebar
-		%h2.hr-a Sidebar
+	#l-sidebar
+		%h2.m-hr-a Sidebar
 		%p=lorem.paragraph

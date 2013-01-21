@@ -1,6 +1,6 @@
 // GRID
 // sidebar and main content areas
-#primary, #primary + #sidebar {
+#l-primary, #l-primary + #l-sidebar {
 	@media (max-width:$medium) {
 		width: 100%;
 		left: 0;
@@ -80,7 +80,7 @@
 // end grid
 
 // HEADER
-#logo {
+#m-logo {
 	@media (max-width:$medium) {
 		margin: 0 0 0 $outer-padding-mobile;
 		float: none;
@@ -90,7 +90,7 @@
 		text-align: center;
 	}
 }
-#main-nav {
+#m-main-nav {
 	@media (max-width:$large) {
 		li {
 			font-size: 13px;

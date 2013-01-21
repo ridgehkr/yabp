@@ -12,19 +12,24 @@
 	overflow: hidden;
 }
 
-#main {
+#l-main {
 	font-size: 0; // assumes children will be inline-block
 	margin-bottom: 20px;
 }
 
+// reset header font size
+header {
+	font-size: $text-size;
+}
+
 // sidebar and main content areas
-#sidebar, #primary {
+#l-sidebar, #l-primary {
 	@include inline-block;
 	vertical-align: top;
 	font-size: $text-size;
 	position: relative;
 }
-#primary {
+#l-primary {
 	width: 77.999999%;
 	left: 22%;
 	// assumes a sidebar will be used. add class full-width if no sidebar is desired
@@ -36,19 +41,19 @@
 		margin-bottom: 20px;
 		padding-bottom: 19px;
 	}
-	& + #sidebar {
+	& + #l-sidebar {
 		right: 77.999999%;
 		width: 22%;
 	}
 }
 
 // HEADER
-#logo {
+#m-logo {
 	display: block;
 	float: left;
 	max-width: 250px;
 }
-#main-nav {
+#m-main-nav {
 	float: right;
 	width: auto;
 	ul {
