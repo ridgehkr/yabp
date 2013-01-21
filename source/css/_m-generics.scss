@@ -33,27 +33,24 @@ a {
 }
 // end lists
 
-// PRIMARY CONTENT
-// considering the primary content wrapper to be a module, at least for its appearance aspects
-#primary {
-	border-bottom: 1px dotted rgb(200, 200, 200);
-	&:last-child {
-		border-bottom: none;
-	}
-}
-// end primary content
-
 // HEADERS
 .hr-a {
 	font-family: $serif;
-	font-weight: lighter;
-	background: $text-color;
-	color: white;
+	font-weight: normal;
+	color: $text-color;
 	padding: 12px 0;
 	margin: 0 0 20px;
+	font-size: 36px;
 	a {
 		@include link-colors($text-color, $text-color, $text-color, $text-color, $text-color);
 	}
+}
+.hr-b {
+	font-family: $sans-serif;
+	font-weight: lighter;
+	color: $text-color;
+	margin: 0 0 20px;
+	font-size: 26px;
 }
 // end headers
 

@@ -1,58 +1,62 @@
-#primary
-	%h2.hr-a Primary Content
-	
-	.l-container
-		%h2 Blockquote
-		%blockquote=lorem.sentences 3
+.l-container
+	#primary
+		%h2.hr-a Primary Content
+		
+		.l-container
+			%p=lorem.paragraph
 
-	.l-container
-		%h2 Blockquote Aside
-		%blockquote.aside-right= "<strong>Aside Right</strong> " + lorem.sentences(3)
-		%blockquote.aside-left= "<strong>Aside Left</strong> " + lorem.sentences(3)
+		.l-container
+			%h2.hr-b Blockquote
+			%blockquote=lorem.sentences 3
 
-	.l-container
-		%h2 Grid
-		.l-halves.l-faux-columns
-			.l-col
-				%h3 .halves
-				=lorem.paragraph
-				%ul.bullets
-					- for i in 1..2
-						%li
-							=lorem.words 3
-							%ul.bullets
-								- for i in 1..5
-									%li=lorem.words 3
-			.l-col
-				%h3 .halves
-				%p=lorem.paragraph
-				%figure.media-feature
-					%a{ :href => '#' }
-						=image_tag lorem.image('250x250')
-					%figcaption.caption
-						%strong.title=lorem.words 5
-						=lorem.sentences 2
-					%p.proceed=link_to 'Read more', '#', :class => 'more'
-				%p=lorem.paragraph
-				%p=lorem.paragraph
+		.l-container
+			%h2.hr-b Blockquote Aside
+			%blockquote.aside-right= "<strong>Aside Right</strong> " + lorem.sentences(3)
+			%blockquote.aside-left= "<strong>Aside Left</strong> " + lorem.sentences(3)
 
-		.l-thirds.l-faux-columns
-			- for i in 1..3
+		.l-container
+			%h2.hr-b Grid
+			.l-halves.l-faux-columns
 				.l-col
-					%h3 .thirds
+					%h3 .halves
 					=lorem.paragraph
-
-		.l-quarters
-			- for i in 1..4
+					%ul.bullets
+						- for i in 1..2
+							%li
+								=lorem.words 3
+								%ul.bullets
+									- for i in 1..5
+										%li=lorem.words 3
 				.l-col
-					%h3 .quarters
-					=lorem.paragraph
+					%h3 .halves
+					%p=lorem.paragraph
+					%figure.media-feature
+						%a{ :href => '#' }
+							=image_tag lorem.image('250x250')
+						%figcaption.caption
+							%strong.title=lorem.words 5
+							=lorem.sentences 2
+						%p.proceed=link_to 'Read more', '#', :class => 'more'
+					%p=lorem.paragraph
+					%p=lorem.paragraph
 
-		.l-fifths
-			- for i in 1..5
-				.l-col
-					%h3=".fifths column #{i}"
-					=lorem.paragraph
-#sidebar
-	%h2.hr-a Sidebar
-	%p=lorem.paragraph
+			.l-thirds.l-faux-columns
+				- for i in 1..3
+					.l-col
+						%h3 .thirds
+						=lorem.paragraph
+
+			.l-quarters
+				- for i in 1..4
+					.l-col
+						%h3 .quarters
+						=lorem.paragraph
+
+			.l-fifths
+				- for i in 1..5
+					.l-col
+						%h3=".fifths column #{i}"
+						=lorem.paragraph
+	#sidebar
+		%h2.hr-a Sidebar
+		%p=lorem.paragraph

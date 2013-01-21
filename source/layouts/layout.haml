@@ -1,16 +1,19 @@
 !!! 5
-<!--[if IE 8]>    <html lang="en" class="no-js ie8 lt-ie9"> <![endif]-->
-<!--[if IE 9]>    <html lang="en" class="no-js ie9 lt-ie10"> <![endif]-->
-<!--[if gt IE 8]><!-->
 %html{ :lang => "en", :class => "no-js" }
-	<!--<![endif]-->
-	
+
 	- $siteTitle = "Yet Another Boilerplate"
 
 	=partial "common/document-head", :locals => { :site_title => $siteTitle }
 
-	%body{ :class => $bodyClass }
-		= partial "common/header"
-		#main.l-container{ :role=>"main-content" }
-			=yield
-		= partial "common/footer"
+	- if defined?($bodyClass)
+		= '<!--[if IE 7]> <body class="ie7 lt-ie9 lt-ie8 ' + $bodyClass + '"> <![endif]--><!--[if IE 8]> <body class="ie8 lt-ie9 ' + $bodyClass + '"> <![endif]--><!--[if gt IE 8]><!--> <body class="' + $bodyClass + '"> <!--<![endif]-->'
+	- else
+		\<!--[if IE 7]> <body class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
+		\<!--[if IE 8]> <body class="no-js ie8 lt-ie9"> <![endif]-->
+		\<!--[if gt IE 8]><!--> <body class="no-js"> <!--<![endif]-->
+
+	#main.main{ :role => "main" }
+		=yield
+
+	= partial "common/footer"
+	\</body>

@@ -4,7 +4,13 @@
 	@media (max-width:$medium) {
 		width: 100%;
 		left: 0;
-		padding: 0 $outer-padding-mobile;
+		padding: 0;
+	}
+}
+.l-container { // create padding on edge of screen, but not inside
+	padding: 0 $outer-padding-mobile;
+	.l-container {
+		padding: 0;
 	}
 }
 .l-fifths {
@@ -81,6 +87,7 @@
 		margin: 0 auto;
 		max-width: 250px;
 		display: block;
+		text-align: center;
 	}
 }
 #main-nav {
