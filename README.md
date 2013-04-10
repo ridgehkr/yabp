@@ -6,7 +6,7 @@ This Middleman boilerplate project was originally created to help me get a head 
 Core components are:
 * [Modernizr](http://modernizr.com/)
 * code borrowed from the [HTML5 Boilerplate](http://html5boilerplate.com/)
-* the [SMACSS](http://smacss.com/) approach
+* mobile-first design using the [SMACSS](http://smacss.com/) approach
 * [jQuery](http://jquery.com/)
 * [Respond](https://github.com/scottjehl/Respond)
 * [Selectivizr](http://selectivizr.com/)
