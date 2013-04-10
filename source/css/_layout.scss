@@ -1,70 +1,61 @@
 //================
 // GRID COMPONENTS
-//
-// directions: uncomment the grid components needed
 //================
 
 // can be used to wrap nearly anything
 .l-container {
 	max-width: $outer-width;
 	margin: 0 auto;
-	@include clear;
 	overflow: hidden;
+	display: block;
+	width: 100%;
+	padding: 0 $outer-padding;
+	.l-container {
+		padding: 0;
+	}
 }
 
-#l-main {
-	font-size: 0; // assumes children will be inline-block
-	margin-bottom: 20px;
+.l-col-container {
+	@extend .l-container;
+	font-size: 0;
 }
 
-// reset header font size
-header {
-	font-size: $text-size;
-}
-
-// sidebar and main content areas
-#l-sidebar, #l-primary {
+.l-col {
+	width: 100%;
 	@include inline-block;
 	vertical-align: top;
 	font-size: $text-size;
-	position: relative;
-}
-#l-primary {
-	width: 77.999999%;
-	left: 22%;
-	// assumes a sidebar will be used. add class full-width if no sidebar is desired
-	&.full-width {
-		width: 100%;
-		left: 0;
+	margin: $vertical-space 0;
+	&:first-child {
+		margin-top: 0;
 	}
-	.l-container {
-		margin-bottom: 20px;
-		padding-bottom: 19px;
-	}
-	& + #l-sidebar {
-		right: 77.999999%;
-		width: 22%;
+	&:last-child {
+		margin-bottom: 0;
 	}
 }
 
-// HEADER
-#m-logo {
-	display: block;
-	float: left;
-	max-width: 250px;
+.l-main {
+	margin-bottom: $vertical-space;
 }
-#m-main-nav {
-	float: right;
-	width: auto;
-	ul {
-		margin: 0;
-		font-size: 0;
-		float: right;
-		text-align: right;
+
+.l-primary, .l-sidebar {
+	@extend .l-col;
+	.l-container ~ .l-container {
+		margin-top: $vertical-space;
 	}
-	li {
-		font-size: $text-size;
-		@include inline-block;
+}
+
+.l-halves {
+	@extend .l-col-container;
+}
+
+// HEADER
+.m-logo {
+	display: block;
+}
+
+.m-main-nav {
+	.nav-item {
 	}
 	a {
 		display: block;
@@ -73,87 +64,4 @@ header {
 }
 // end header
 
-// remove the whitespace between columns because of inline-block
-.l-fifths, .l-quarters, .l-thirds, .l-halves {
-	font-size: 0;
-}
-
-// insert the default font size back in
-.l-col, .l-double-col {
-	font-size: $text-size;
-	@include inline-block;
-	vertical-align: top;
-}
-
-// ===========================
-// FIVE-COLUMN GRID
-// ===========================
-.l-fifths {
-	.l-col {
-		width: 19.999999%;
-	}
-}
-
-// ===========================
-// FOUR-COLUMN GRID
-// ===========================
-.l-quarters {
-	.l-col {
-		width: 24.999999%;
-	}
-}
-
-// ===========================
-// THREE-COLUMN GRID
-// ===========================
-.l-thirds {
-	position: relative;
-	.l-col {
-		width: 33.333333%;
-	}
-	.l-double-col {
-		width: 66.666666%;
-	}
-	// FAUX COLUMNS
-	&.l-faux-columns:before { // full-height hack for thirds
-		position: absolute;
-		height: 100%;
-		width: 0;
-		left: 33.333333%;
-		top: 0;
-		content: '';
-		display: block;
-		border-right: 1px dotted;
-	}
-	&.l-faux-columns:after { // full-height hack for thirds
-		position: absolute;
-		height: 100%;
-		width: 0;
-		right: 33.333333%;
-		top: 0;
-		content: '';
-		display: block;
-		border-right: 1px dotted;
-	}
-	// END .faux-columns
-}
-
-// ===========================
-// TWO-COLUMN GRID
-// ===========================
-.l-halves {
-	position: relative;
-	.l-col {
-		width: 49.999999%;
-	}
-	&.l-faux-columns:before { // full-height hack for halves
-		position: absolute;
-		height: 100%;
-		width: 0;
-		left: 50%;
-		top: 0;
-		content: '';
-		display: block;
-		border-right: 1px dotted;
-	}
-}
+// end primary content

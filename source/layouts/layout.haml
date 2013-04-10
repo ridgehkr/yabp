@@ -12,8 +12,11 @@
 		\<!--[if IE 8]> <body class="no-js ie8 lt-ie9"> <![endif]-->
 		\<!--[if gt IE 8]><!--> <body class="no-js"> <!--<![endif]-->
 
-	#l-main.main{ :role => "main" }
+	= partial "common/header"
+
+	.l-main{ :role => "main" }
 		=yield
 
 	= partial "common/footer"
+
 	\</body>

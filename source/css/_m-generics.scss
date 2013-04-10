@@ -11,6 +11,17 @@ a {
 }
 // end anchors
 
+// GENERIC CONTENT ELEMENTS
+p, ul {
+	margin: $vertical-space 0;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
 // LISTS
 .m-bullets {
 	li {
@@ -28,7 +39,14 @@ a {
 		}
 	}
 	ul {
-		margin-left: 8px;
+		margin-left: $content-spacing;
+	}
+}
+.inline-nav {
+	font-size: 0;
+	.nav-item {
+		font-size: $text-size;
+		@include inline-block;
 	}
 }
 // end lists
@@ -38,27 +56,31 @@ a {
 	font-family: $serif;
 	font-weight: normal;
 	color: $text-color;
-	padding: 12px 0;
-	margin: 0 0 20px;
+	padding: 0;
+	margin: 0 0 $vertical-space;
 	a {
 		@include link-colors($text-color, $text-color, $text-color, $text-color, $text-color);
 	}
 }
-.hr-b {
+.m-hr-b {
 	font-family: $sans-serif;
 	font-weight: lighter;
 	color: $text-color;
-	margin: 0 0 20px;
+	margin: 0 0 $vertical-space;
 }
 // end headers
 
 // MEDIA ELEMENTS
 .media-feature {
-	float: right;
-	margin: 0 0 8px 8px;
-	width: 33.333333%;
-	.caption, .proceed {
-		font-size: em(13px);	
+	width: 100%;
+	.media-wrap {
+		display: block;
+		text-align: center;
+		margin-bottom: $content-spacing;
+	}
+	.proceed {
+		display: block;
+		margin: $content-spacing 0;
 	}
 }
 
@@ -75,22 +97,3 @@ a {
 		height: 100%;
 	}
 }
-// end media boxes
-
-// BLOCKQUOTES
-// using the element because there really isn't a reason to create a blockquote class
-blockquote {
-	background: rgb(199, 232, 255);
-	@include border-radius(5px);
-	padding: 18px;
-	margin: 18px 0;
-	&.aside-right {
-		float: right;
-		width: 62%;
-	}
-	&.aside-left {
-		float: left;
-		width: 62%;
-	}
-}
-// end blockquotes

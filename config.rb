@@ -59,6 +59,7 @@ end
 #   end
 # end
 
+# LiveReload
 activate :livereload
 
 # Change the CSS directory

@@ -1,8 +1,8 @@
-%header
+%header.page-header
 	.l-container
-		%a#m-logo{ :href => "#" }
+		%a.m-logo{ :href => "#" }
 			=image_tag lorem.image('225x100')
-		%nav#m-main-nav
-			%ul
+		%nav.m-main-nav
+			%ul.nav-list
 				- for i in 1..5
-					%li=link_to lorem.words 2
+					%li.nav-item=link_to lorem.words 2

@@ -1,119 +1,44 @@
 // GRID
 // sidebar and main content areas
-#l-primary, #l-primary + #l-sidebar {
-	@media (max-width:$medium) {
-		width: 100%;
-		left: 0;
-		padding: 0;
-	}
-}
-.l-container { // create padding on edge of screen, but not inside
-	padding: 0 $outer-padding-mobile;
-	.l-container {
-		padding: 0;
-	}
-}
-.l-fifths {
-	@media (max-width:$medium) { // blocks go full-width at this point. it's up to child elements to know this
-		.l-col {
-			width: 33.333333%;
-		}
-	}
-	@media (max-width:$small) {
-		.l-col {
-			width: 49.999999%;
-		}
-	}
-	@media (max-width:$smallest) {
-		.l-col {
+.l-primary {
+	@media (min-width:$medium) {
+		width: percent($primary-width, $outer-real-width);
+		// to be used if there's no sidebar
+		&.full-width {
 			width: 100%;
+			left: 0;
 		}
 	}
 }
-.l-quarters {
-	@media (max-width:$medium) {
-		.l-col {
-			width: 49.999999%;
-		}
-	}
-	@media (max-width:$small) {
-		.l-col {
-			width: 100%;
-		}
+.l-sidebar {
+	@media (min-width:$medium) {
+		width: percent($sidebar-width, $outer-real-width);
 	}
 }
-.l-thirds {
-	@media (max-width:$medium) {
-		&.l-faux-columns:before {
-			display: none;
-		}
-		&.l-faux-columns:after {
-			left: 50%;
-		}
-		.l-col {
-			width: 49.999999%;
-		}
-		.l-double-col {
-			width: 100%;
-		}
-	}
-	@media (max-width:$small) {
-		&.l-faux-columns:before,
-		&.l-faux-columns:after {
-			display: none;
-		}
-		.l-col {
-			width: 100%;
-		}
+.l-sidebar ~ .l-primary {
+	@media (min-width:$medium) {
+		left: percent($sidebar-width, $outer-real-width);
 	}
 }
 .l-halves {
-	@media (max-width:$medium) {
+	@media (min-width:$small) {
+		position: relative;
 		&.l-faux-columns:before {
-			display: none;
+			display: block;
+			border-right: 1px dotted;
+			content: '';
+			position: absolute;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			left: 49.999999%;
 		}
 		.l-col {
-			width: 100%;
+			width: 49.999999%;
 		}
 	}
 }
 // end grid
-
-// HEADER
-#m-logo {
-	@media (max-width:$medium) {
-		margin: 0 0 0 $outer-padding-mobile;
-		float: none;
-		margin: 0 auto;
-		max-width: 250px;
-		display: block;
-		text-align: center;
-	}
-}
-#m-main-nav {
-	@media (max-width:$large) {
-		li {
-			font-size: 13px;
-		}
-	}
-	@media (max-width:$medium) {
-		padding: 0 $outer-padding-mobile;
-		width: 100%;
-		ul {
-			float: none;
-			text-align: center;
-		}
-	}
-	@media (max-width:$small) {
-		ul {
-			text-align: left;
-		}
-		li {
-			width: 49.999999%;
-		}
-	}
-}
-// end header
 
 // GENERICS
 a {
@@ -129,32 +54,37 @@ a {
 	}
 }
 
-blockquote {
-	@media (max-width:$small) {
-		margin-right: 0;
-		margin-left: 0;
-		&.aside-right, &.aside-left {
-			float: none;
-			width: 100%;
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
-}
-
 // MEDIA FEATURE a.k.a. figure
 .media-feature {
-	@media (max-width:$smallest) {
-		width: 100%;
-		img, video, iframe {
-			width: 50%;
-			float: right;
-		}
-		.caption {
-			margin: 0;
+	@media (min-width:$medium) {
+		float: right;
+		margin: 0 0 8px 8px;
+		max-width: 49.999999%;
+		.caption, .proceed {
+			font-size: $min-text-size;
 		}
 	}
 }
 // end media feature
+
+// HEADER
+.m-logo {
+	@media (min-width:$small) {
+		margin: $vertical-space 0;
+		@include inline-block;
+	}
+}
+.m-main-nav {
+	@media (min-width:$medium) {
+		.nav-list {
+			font-size: 0;
+		}
+		.nav-item {
+			@include inline-block;
+			font-size: $text-size;
+		}
+	}
+}
+// end header
 
 // end generics

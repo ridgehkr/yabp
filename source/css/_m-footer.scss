@@ -2,6 +2,23 @@
 // for modules only found in the footer
 //=====================================
 
-footer {
-	border-top: 1px dotted rgb(200, 200, 200);
+.page-footer {
+	border-top: 1px dotted;
+	margin-top: $vertical-space;
+}
+
+.footer-nav {
+	text-align: center;
+	.nav-list {
+		@include inline-block;
+		max-width: $sidebar-width;
+	}
+	.nav-item {
+		display: block;
+		text-align: left;
+		padding: ($text-size / 2) 0;
+	}
+	a {
+		padding: ($text-size / 2) 0;
+	}
 }

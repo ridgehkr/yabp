@@ -1,13 +1,18 @@
 //=====================================
 // for modules only found in the header
 //=====================================
-
-#m-logo {
-	@include inline-block;
+.page-header {
+	margin-bottom: $vertical-space;
 }
 
-#m-main-nav {
-	a {
-		background: #f1f1f1;
-	}
+.m-logo {
+	@include inline-block;
+	margin: 0 0 $vertical-space $outer-padding;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+
+.m-main-nav {
+	background: #f1f1f1;
 }
