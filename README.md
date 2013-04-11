@@ -63,8 +63,3 @@ Example:
         .l-col This is column 1
         .l-col This is column 2
 ```
-
-Legal Stuff
-----
-
-YABP is distributed under the MIT license

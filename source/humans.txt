@@ -1,14 +1,15 @@
-/* the humans responsible & colophon */
-/* humanstxt.org */
+# humanstxt.org/
+# The humans responsible & technology colophon
 
-/* TEAM */
-	Company: 
+# TEAM
 
-	Web Developer: 
-	Twitter: 
-	Location: 
+    <name> -- <role> -- <twitter>
 
-/* SITE */
-	Standards: HTML5, CSS3
-	Components: HAML, SASS, CoffeeScript, jQuery, Modernizr, HTML5 Boilerplate, Normalize.css, Selectivizr, Respond.js
-	Software: Sublime Text 2
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr

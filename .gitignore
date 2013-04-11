@@ -1,4 +1,5 @@
-.DS_Store
-*.sass-cache
-.mm-pid*
-middleman/build/*
+*.DS_Store
+*.scssc
+sass-cache/
+
+build/
