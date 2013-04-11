@@ -20,6 +20,11 @@
 		left: percent($sidebar-width, $outer-real-width);
 	}
 }
+.l-col {
+	@media (min-width:$small) {
+		margin: 0;
+	}
+}
 .l-halves {
 	@media (min-width:$small) {
 		position: relative;

@@ -18,6 +18,18 @@
 								%ul.m-bullets
 									- for i in 1..5
 										%li=lorem.words 3
+
+					%h4 Media Embed
+					%p
+						YABP lets you embed responsive media elements. All you need to do is wrap your embedded item with a div of class <code>m-media-embed</code>
+					.segment
+						%h5 YouTube
+						.m-media-embed
+							%iframe(width="560" height="315" src="http://www.youtube.com/embed/rARN6agiW7o" frameborder="0" allowfullscreen)
+					.segment
+						%h5 Vimeo
+						.m-media-embed
+							%iframe(src="http://player.vimeo.com/video/56629974" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
 				.l-col
 					%h3 .halves
 					%p=lorem.paragraph
@@ -34,4 +46,7 @@
 
 	.l-sidebar
 		%h2.m-hr-a Sidebar
-		%p=lorem.paragraph
+		- for i in 1..2
+			.segment
+				%h3 Segment
+				%p=lorem.paragraph

@@ -20,6 +20,10 @@
 	font-size: 0;
 }
 
+.segment {
+	margin: $vertical-space 0;
+}
+
 .l-col {
 	width: 100%;
 	@include inline-block;
