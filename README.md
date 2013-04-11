@@ -35,6 +35,34 @@ Component Details
 Getting Started
 ----
 
+### Installation
+If it doesn't already exist, create ```~/.middleman```:
+```
+$ mkdir ~/.middleman
+```
+Clone the repository to this directory:
+```
+$ cd ~/.middleman
+$ git clone git@github.com:ridgehkr/yabp.git
+```
+
+```cd``` to the directory where you want to create your project and use ```middleman init``` to create a new project, passing in the ```--template``` flag to specify yabp:
+```
+$ middleman init test-yabp --template=yabp
+```
+
+```cd``` into the project and install the required gems:
+```
+$ bundle install
+```
+
+Once all the required gems are installed, we're ready to fire up the Middleman server:
+```
+$ middleman server
+```
+
+Point your browser to ```http://0.0.0.0:4567``` and start coding!
+
 ### The Grid
 YABP comes with a very basic grid system. It's not intended to be an invasive, all-encompasing grid system such as Blueprint or Bootstrap's, just organizational blocks for sub-content layout.
 
@@ -61,3 +89,6 @@ Example:
         .l-col This is column 1
         .l-col This is column 2
 ```
+
+### The Media Box
+YABP includes basic media embed styles which allow you to insert responsive YouTube, Vimeo, or other embedded videos into your page. To make a video embed responsive, simple wrap it with a class of ```.m-media-embed```
