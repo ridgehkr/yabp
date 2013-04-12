@@ -48,7 +48,7 @@ $ git clone git@github.com:ridgehkr/yabp.git
 
 ```cd``` to the directory where you want to create your project and use ```middleman init``` to create a new project, passing in the ```--template``` flag to specify yabp:
 ```
-$ middleman init test-yabp --template=yabp
+$ middleman init <project-name> --template=yabp
 ```
 
 ```cd``` into the project and install the required gems:
