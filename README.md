@@ -5,8 +5,7 @@ This Middleman boilerplate project was originally created to help me get a head 
 
 Core components are:
 * [Modernizr](http://modernizr.com/) w/ script loading via [yepnope.js](http://yepnopejs.com/)
-* inspiration from the [HTML5 Boilerplate](http://html5boilerplate.com/)
-* mobile-first design using the [SMACSS](http://smacss.com/) approach
+* mobile-first CSS using the [SMACSS](http://smacss.com/) approach
 * [jQuery](http://jquery.com/)
 * [Respond](https://github.com/scottjehl/Respond)
 * [Selectivizr](http://selectivizr.com/)
@@ -16,21 +15,22 @@ Component Details
 
 *Open the index file to view an example of all components in action.*
 
-* Initiated Middleman project complete with a basic layout in HAML and a config file with suggested settings.
+* Middleman project template complete with a basic layout in HAML and a config file with suggested settings.
 * HTML5
   * all template elements have been laid out to be friendly to responsive styles
-  * loosely based on the HTML5 Boilerplate
-* script loading via a customized build of Modernizr with mq(), load(), the canvas element test, and html5shiv and printshiv. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
-  * all scripts written with CoffeeScript
+  * inspired in part by the HTML5 Boilerplate
+  * IE version classes on the ```body``` element which allows the _X-UA-Compatible_ ```meta``` tag to turn off Compatibility Mode
+* JavaScript via CoffeeScript
+  * script loading via a customized build of Modernizr with mq(), load(), the canvas element test, and html5shiv and printshiv. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
   * loading global JS through Modernizr's load() function (an alias of yepnope's load())
-  * testing for CSS3 support and loading JavaScripts to compensate on failure
+  * testing for feature support and loading appropriate polyfills on failure
   * loading jQuery with a fallback to local
-* SASS w/ Compass
+* CSS via SASS w/ Compass
   * all styles are minimalistic, responsive, and never nested beyond 2 SASS levels.
   * utilizing the SMACSS approach to CSS organization and selectors
   * all elements use the border-box box-sizing style
-  * a few generic column layouts between two and five columns wide which resize and realign responsively
-* humans.txt and robots.txt
+  * a generic column layout of two columns which resize and reposition responsively. Built to be easily modified or expanded to accomodate different column layouts
+* starter humans.txt and robots.txt files
 
 Getting Started
 ----
@@ -38,7 +38,7 @@ Getting Started
 ### Installation
 If it doesn't already exist, create ```~/.middleman```:
 ```
-$ mkdir ~/.middleman
+$ mkdir -p ~/.middleman
 ```
 Clone the repository to this directory:
 ```
