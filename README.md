@@ -21,7 +21,7 @@ Component Details
   * inspired in part by the HTML5 Boilerplate
   * IE version classes on the ```body``` element which allows the _X-UA-Compatible_ ```meta``` tag to turn off Compatibility Mode
 * JavaScript via CoffeeScript
-  * script loading via a customized build of Modernizr with mq(), load(), the canvas element test, and html5shiv and printshiv. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
+  * script loading via a customized build of Modernizr with mq(), load(), the canvas element test, and html5shiv and printshiv. Feel free to replace it with your own build, but keep in mind that [the script loader](source/js/loader.js.coffee) may need to be changed to match. 
   * loading global JS through Modernizr's load() function (an alias of yepnope's load())
   * testing for feature support and loading appropriate polyfills on failure
   * loading jQuery with a fallback to local
@@ -30,7 +30,7 @@ Component Details
   * utilizing the SMACSS approach to CSS organization and selectors
   * all elements use the border-box box-sizing style
   * a generic column layout of two columns which resize and reposition responsively. Built to be easily modified or expanded to accomodate different column layouts
-* starter humans.txt and robots.txt files
+* starter [humans.txt](source/humans.txt) and [robots.txt](source/robots.txt) files
 
 Getting Started
 ----
@@ -62,6 +62,8 @@ $ middleman server
 ```
 
 Point your browser to ```http://0.0.0.0:4567``` and start coding!
+
+_Note: [robots.txt](source/robots.txt) sets ```Disallow: /``` to avoid unwanted indexing during development. Make sure you change this before you go live!_
 
 ### The Grid
 YABP comes with a very basic grid system. It's not intended to be an invasive, all-encompasing grid system such as Blueprint or Bootstrap's, just organizational blocks for sub-content layout.
