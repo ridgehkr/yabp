@@ -63,6 +63,8 @@ $ middleman server
 
 Point your browser to ```http://0.0.0.0:4567``` and start coding!
 
+_Note: [robots.txt](source/robots.txt) sets ```Disallow: /``` to avoid unwanted indexing during development. Make sure you change this before you go live!_
+
 ### The Grid
 YABP comes with a very basic grid system. It's not intended to be an invasive, all-encompasing grid system such as Blueprint or Bootstrap's, just organizational blocks for sub-content layout.
 
