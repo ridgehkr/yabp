@@ -1,0 +1,11 @@
+{
+    "name":  "YABP",
+    "version": "0.0.1",
+    "main": "./source/index.html",
+    "dependencies": {
+        "modernizr": "latest",
+        "jquery": "latest",
+        "respond": "latest",
+        "selectivizr": "latest"
+    }
+}
