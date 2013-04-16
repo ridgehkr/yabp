@@ -5,7 +5,6 @@
     "dependencies": {
         "yepnope": "~> 1.5.4",
         "jquery": "~> 1.9.1",
-        "zepto": "~> 1.0",
         "respond": "latest",
         "selectivizr": "latest"
     }
