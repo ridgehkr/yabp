@@ -3,8 +3,9 @@
     "version": "0.0.2",
     "main": ["source/index.html.haml", "source/js/loader.js.coffee", "source/css/main.css.scss", "source/css/ie.css.scss"],
     "dependencies": {
-        "modernizr": "~> 2.6.2",
+        "yepnope": "~> 1.5.4",
         "jquery": "~> 1.9.1",
+        "zepto": "~> 1.0",
         "respond": "latest",
         "selectivizr": "latest"
     }
