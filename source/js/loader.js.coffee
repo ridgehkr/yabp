@@ -10,7 +10,12 @@ yepnope [
 		#	- selectivizr 1.0.2
 		#	- respond 1.1.0
 		test: CSSMediaRule?
-		nope: ['js/ie-polyfill.js']
+		nope: 'js/ie-polyfill.js'
+	},
+	{
+		# check for html5 support for testing <canvas> support
+		test: !!document.createElement('canvas').getContext
+		nope: 'js/libs/html5shiv-printshiv-3.6.2.min.js'
 	},
 	{
 		# if IE, we need jQuery. Otherwise, Zepto will do just fine

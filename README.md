@@ -1,15 +1,16 @@
-Yet Another Boilerplate (YABP)
+Yet Another Boilerplate (YABP) 0.0.2
 ====
 
 This Middleman boilerplate project was originally created to help me get a head start on new front-end development and uses SASS, HAML, and CoffeeScript.
 
 Core components are:
-* [Modernizr](http://modernizr.com/) w/ script loading via [yepnope.js](http://yepnopejs.com/)
+* feature-aware script loading via [yepnope.js](http://yepnopejs.com/)
 * inspiration from the [HTML5 Boilerplate](http://html5boilerplate.com/)
 * mobile-first design using the [SMACSS](http://smacss.com/) approach
 * [jQuery](http://jquery.com/)
 * [Respond](https://github.com/scottjehl/Respond)
 * [Selectivizr](http://selectivizr.com/)
+* [Zepto](http://zeptojs.com/)
 
 Component Details
 ----
@@ -18,13 +19,15 @@ Component Details
 
 * Initiated Middleman project complete with a basic layout in HAML and a config file with suggested settings.
 * HTML5
-  * all template elements have been laid out to be friendly to responsive styles
+  * all template elements have been laid out to be friendly to addtional responsive styles
   * loosely based on the HTML5 Boilerplate
-* script loading via a customized build of Modernizr with mq(), load(), the canvas element test, and html5shiv and printshiv. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
+* JavaScript
+  * script loading via yepnope. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
   * all scripts written with CoffeeScript
-  * loading global JS through Modernizr's load() function (an alias of yepnope's load())
+  * html5shiv for oldIE support
+  * loading global JS through yepnope's load() function
   * testing for CSS3 support and loading JavaScripts to compensate on failure
-  * loading jQuery with a fallback to local
+  * loading Zepto if not IE, jQuery if IE, plus a local jQuery fallback if neither succeed
 * SASS w/ Compass
   * all styles are minimalistic, responsive, and never nested beyond 2 SASS levels.
   * utilizing the SMACSS approach to CSS organization and selectors
