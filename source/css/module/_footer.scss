@@ -1,12 +1,10 @@
-//=====================================
-// for modules only found in the footer
-//=====================================
-
+// page footer area
 .page-footer {
 	border-top: 1px dotted;
 	margin-top: $vertical-space;
 }
 
+// footer navigation
 .footer-nav {
 	text-align: center;
 	.nav-list {
@@ -19,6 +17,7 @@
 		padding: ($text-size / 2) 0;
 	}
 	a {
-		padding: ($text-size / 2) 0;
+		@include min-font;
+		padding: ($min-text-size / 2) 0;
 	}
 }

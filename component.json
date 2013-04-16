@@ -1,10 +1,10 @@
 {
     "name":  "YABP",
     "version": "0.0.1",
-    "main": "./source/index.html",
+    "main": ["source/index.html.haml", "source/js/loader.js.coffee", "source/css/main.css.scss", "source/css/ie.css.scss"],
     "dependencies": {
-        "modernizr": "latest",
-        "jquery": "latest",
+        "modernizr": "~> 2.6.2",
+        "jquery": "~> 1.9.1",
         "respond": "latest",
         "selectivizr": "latest"
     }

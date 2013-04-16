@@ -1,52 +1,53 @@
-.l-col-container
-	.l-primary
-		%h2.m-hr-a Primary Content
-		
-		.l-container
-			%p=lorem.paragraph
-
-		.l-container
-			%h2.m-hr-b Grid
-			.l-halves.col-container.l-faux-columns
-				.l-col
-					%h3 .halves
-					%p=lorem.paragraph
-					%ul.m-bullets
-						- for i in 1..2
-							%li
-								=lorem.words 3
-								%ul.m-bullets
-									- for i in 1..5
-										%li=lorem.words 3
-
-					%h4 Media Embed
-					%p
-						YABP lets you embed responsive media elements. All you need to do is wrap your embedded item with a div of class <code>m-media-embed</code>
-					.segment
-						%h5 YouTube
-						.m-media-embed
-							%iframe(width="560" height="315" src="http://www.youtube.com/embed/rARN6agiW7o" frameborder="0" allowfullscreen)
-					.segment
-						%h5 Vimeo
-						.m-media-embed
-							%iframe(src="http://player.vimeo.com/video/56629974" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
-				.l-col
-					%h3 .halves
-					%p=lorem.paragraph
-					%figure.media-feature
-						%a{ :href => '#' }
-							%span.media-wrap
-								=image_tag lorem.image('350x350')
-						%figcaption.caption
-							%strong.title=lorem.words 5
-							=lorem.sentences 2
-						%p.proceed=link_to 'Read more', '#', :class => 'more'
-					%p=lorem.paragraph
-					%p=lorem.paragraph
-
-	.l-sidebar
-		%h2.m-hr-a Sidebar
-		- for i in 1..2
-			.segment
-				%h3 Segment
+.l-container
+	.l-col-container
+		.l-primary
+			%h2.m-hr-a Primary Content
+			
+			.l-segment
 				%p=lorem.paragraph
+				%p
+					%a{ :href => '#more-content', :class => 'more' }
+						Example link to more content using the <code>.more</code> class
+				%p=lorem.sentences 2
+			.l-segment
+				%h2.m-hr-b Grid
+				.l-segment
+					%code.block
+						&lt;strong&gt;example code block&lt;/strong&gt;
+				.l-halves.l-segment
+					.l-col
+						%h3 .halves
+						%p=lorem.paragraph
+						%ul.m-bullets
+							- for i in 1..2
+								%li
+									=lorem.words 3
+									%ul.m-bullets
+										- for i in 1..5
+											%li=lorem.words 3
+						%h4 Media Embed
+						%p
+							YABP lets you embed responsive media elements. All you need to do is wrap your embedded item with a block-level element of class <code>.m-media-embed</code>
+						.l-segment
+							.m-media-embed
+								%iframe(width="560" height="315" src="http://www.youtube.com/embed/XQu8TTBmGhA" frameborder="0" allowfullscreen)
+					.l-col
+						%h3 .halves
+						%p=lorem.paragraph
+						%figure.media-feature
+							%a{ :href => '#' }
+								%span.media-wrap
+									=image_tag lorem.image('350x350')
+							%figcaption.caption
+								%strong.title=lorem.words 5
+								=lorem.sentence
+							%p.proceed=link_to 'Read more', '#', :class => 'more'
+						%p=lorem.paragraph
+						%p=lorem.paragraph
+
+		.l-sidebar
+			%h2.m-hr-a Sidebar
+			- for i in 1..2
+				.l-segment
+					%h3 Segment
+					%p=lorem.sentences 3

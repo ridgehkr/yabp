@@ -5,70 +5,13 @@
 @import "compass/layout/stretching";
 @import "compass/utilities";
 
-// ===================
-// FUNCTIONS
-// ===================
-
-// convert an inner width to a percentage
-@function percent($target, $context) {
-	@return ($target / $context) * 100%
-}
-
-// convert a pixel value to em
-@function em($px, $base: $base-font-size) {
-	@return ($px / $base) * 1em;
-}
-// END functions
-
-// ===================
-// MIXINS
-// ===================
-
-// clearfix
-// @mixin clear {
-// 	&:after {
-// 		content: "";
-// 		display: block;
-// 		height: 0;
-// 		clear: both;
-// 		width: 100%;
-// 	}
-// 	* html & { height: 1px }
-// }
-// END mixins
-
-// font style variables
-$serif: Georgia, serif;
-$sans-serif: Helvetica, Arial, sans-serif;
-$text-color: #212121;
-$text-size: 16px;
-$min-text-size: 13px;
-$default-text-shadow-color: rgba(0,0,0,0.7);
-$default-text-shadow-blur: 1px;
-$default-text-shadow-v-offset: 1px;
-
-// padding and spacing
-$content-spacing: 8px;
-$inner-padding: 12px;
-$outer-padding: 18px;
-$vertical-space: 18px;
-
-// layout widths
-$outer-width: 1024px;
-$outer-real-width: $outer-width - (2 * $outer-padding);
-$primary-width: 750px;
-$sidebar-width: $outer-real-width - $primary-width;
-
-// breakpoints (from a max-width perspective)
-$smallest: 420px;
-$small: 620px;
-$medium: 820px;
-$large: $outer-width;
-
 // using the SMACSS approach, and have broken up files accordingly
-@import "base"; // includes Normalize.css
-@import "layout";
-@import "module";
-@import "state";
+// root files used to import categorized styles in the desired order
+@import "base/root";
+@import "layout/root";
+@import "module/root";
+@import "state/root";
+@import "theme/root";
 
+// print styles
 @import "print"; // inline as inspired by html5 boilerplate

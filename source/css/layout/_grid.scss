@@ -1,0 +1,25 @@
+// can be used to wrap nearly anything
+.l-container {
+	@include container;
+}
+
+// direct parent of grid columns
+.l-col-container {
+	@include col-container;
+}
+
+// grid columns
+.l-col {
+	@include col;
+}
+
+// primary and sidebar containers
+.l-primary, .l-sidebar {
+	@include col;
+}
+
+// extending the column container
+// implies that child columns will be 50% of their parent's width
+.l-halves {
+	@include col-container;
+}

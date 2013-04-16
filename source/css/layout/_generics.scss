@@ -1,0 +1,9 @@
+// main content wrapper
+.l-main {
+	margin-bottom: $vertical-space;
+}
+
+// logical page segmentation
+.l-segment {
+	@include page-segment;
+}

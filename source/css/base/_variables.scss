@@ -1,0 +1,37 @@
+// padding and spacing
+$content-spacing: 8px;
+$inner-padding: 12px;
+$outer-padding: 18px;
+$vertical-space: 18px;
+$golden-ratio: 1.61803398875;
+
+// layout widths
+$outer-width: 1024px;
+$outer-real-width: $outer-width - (2 * $outer-padding);
+$primary-width: 750px;
+$sidebar-width: $outer-real-width - $primary-width;
+
+// layout config
+$total-cols: 20; // number of columns per container. used within @col-at-breakpoint
+
+// breakpoints (from a max-width perspective)
+$smallest: 420px;
+$small: 620px;
+$medium: 820px;
+$large: $outer-width;
+
+// font style variables
+$serif: Georgia, serif !default;
+$sans-serif: Helvetica, Arial, sans-serif !default;
+$monospace: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+$text-color: #212121;
+$link-color: #fa0000;
+$text-size: 16px;
+$line-height: $text-size * $golden-ratio;
+$min-text-size: 13px;
+$min-line-height: $min-text-size * $golden-ratio;
+
+// text effects
+$default-text-shadow-color: rgba(0,0,0,0.7) !default;
+$default-text-shadow-blur: 1px !default;
+$default-text-shadow-v-offset: 1px !default;

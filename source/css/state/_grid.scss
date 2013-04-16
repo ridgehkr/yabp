@@ -1,0 +1,26 @@
+// sidebar and main content areas
+.l-primary {
+	@include col-at-breakpoint($medium, 14, false);
+}
+.l-sidebar {
+	@include col-at-breakpoint($medium, 6, false);
+	margin-top: 0;
+}
+// to make a container be the entire width of its container
+.full-width {
+	@media (min-width:$medium) {
+		width: 100%;
+		left: 0;
+		display: block;
+	}
+}
+.l-col {
+	@media (min-width:$small) {
+		margin: 0;
+	}
+}
+.l-halves {
+	.l-col {
+		@include col-at-breakpoint($small, 2);
+	}
+}

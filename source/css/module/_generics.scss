@@ -1,17 +1,20 @@
-// ANCHORS
+// special anchors
+//	.more creates a right-pointing arrow before the anchor element
 a {
 	&.more:before {
-		content: '»';
-		position: relative;
-		top: -1px;
+		content: '';
 		@include inline-block;
-		padding-right: 4px;
-		font-size: em(22px);
+		padding-right: $content-spacing / 2;
+		font-size: $text-size * $golden-ratio;
+		width: 0;
+		height: 0;
+		border-top: ($content-spacing / $golden-ratio) solid transparent;
+		border-bottom: ($content-spacing / $golden-ratio) solid transparent;
+		border-left: $content-spacing solid $text-color;
 	}
 }
-// end anchors
 
-// GENERIC CONTENT ELEMENTS
+// generic content elements
 p, ul {
 	margin: $vertical-space 0;
 	&:first-child {
@@ -22,7 +25,24 @@ p, ul {
 	}
 }
 
-// LISTS
+code {
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	font-family: $monospace;
+	@include inline-block;
+	@include min-font;
+	padding: 0 3px;
+	&.block {
+		display: block;
+		padding: $content-spacing;
+	}
+	pre {
+		margin: 0;
+	}
+}
+// end generic content elements
+
+// list styles tweaked slightly to allow for bullet appearance customization
 .m-bullets {
 	li {
 		position: relative;
@@ -42,6 +62,8 @@ p, ul {
 		margin-left: $content-spacing;
 	}
 }
+
+// inline navigation items
 .inline-nav {
 	font-size: 0;
 	.nav-item {
@@ -49,9 +71,8 @@ p, ul {
 		@include inline-block;
 	}
 }
-// end lists
 
-// HEADERS
+// headers
 .m-hr-a {
 	font-family: $serif;
 	font-weight: normal;
@@ -70,21 +91,23 @@ p, ul {
 }
 // end headers
 
-// MEDIA ELEMENTS
+// media elements
 .media-feature {
 	width: 100%;
-	.media-wrap {
+	max-width: none;
+	.media-wrap { // wrap the media item with this class
 		display: block;
 		text-align: center;
 		margin-bottom: $content-spacing;
 	}
-	.proceed {
+	.proceed { // use as a "more" link for the media element
 		display: block;
 		margin: $content-spacing 0;
 	}
 }
 
 // preserves the aspect ratio of videos embedded via YouTube, Vimeo, etc.
+// wrap embedded videos with a block-level element of this class
 .m-media-embed {
 	position: relative;
 	padding-bottom: 56.25%;

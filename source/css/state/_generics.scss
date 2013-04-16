@@ -1,0 +1,24 @@
+a {
+	// since outline was removed in base styles, consider indications for the following states
+	&:hover {
+		text-decoration: none;
+	}
+	&:active {
+
+	}
+	&:focus {
+
+	}
+}
+
+// media feature a.k.a. figure
+.media-feature {
+	@media (min-width:$medium) {
+		float: right;
+		margin: 0 0 $content-spacing $content-spacing;
+		max-width: 49.999999%;
+		.caption, .proceed {
+			font-size: $min-text-size;
+		}
+	}
+}

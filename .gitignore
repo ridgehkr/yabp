@@ -3,4 +3,5 @@
 sass-cache/
 
 build/
-/Gemfile.lock
+.bundle
+Gemfile.lock

@@ -5,16 +5,12 @@ class Application
 	
 		@_plugins = ->
 			# initialize all plugins here
-		
-		@_bindings = ->
-			# initialize event bindings here
 
 		@_content = ->
 			# initialize content-helping JS here
 
 		# initial bindings and plug inits go here
 		do @_plugins
-		do @_bindings
 		do @_content
 	
 $ ->

@@ -1,0 +1,17 @@
+.m-logo {
+	@media (min-width:$small) {
+		margin: $vertical-space 0;
+		@include inline-block;
+	}
+}
+.m-main-nav {
+	@media (min-width:$medium) {
+		.nav-list {
+			@include col-container;
+		}
+		.nav-item {
+			@include inline-block;
+			font-size: $text-size;
+		}
+	}
+}
