@@ -1,6 +1,6 @@
 {
     "name":  "YABP",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": ["source/index.html.haml", "source/js/loader.js.coffee", "source/css/main.css.scss", "source/css/ie.css.scss"],
     "dependencies": {
         "modernizr": "~> 2.6.2",
