@@ -1,4 +1,4 @@
-Yet Another Boilerplate (YABP)
+Yet Another Boilerplate (YABP) 0.0.2
 ====
 
 This Middleman boilerplate project was originally created to help me get a head start on new front-end development and uses SASS, HAML, and CoffeeScript.
