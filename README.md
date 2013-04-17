@@ -41,7 +41,7 @@ Getting Started
 ### Installation
 If it doesn't already exist, create ```~/.middleman```:
 ```
-$ mkdir ~/.middleman
+$ mkdir -p ~/.middleman
 ```
 Clone the repository to this directory:
 ```
