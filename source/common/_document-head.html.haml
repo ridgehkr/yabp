@@ -14,10 +14,12 @@
 	%link{ :rel => "stylesheet", :href => "css/main.css" }
 	
 	/ all scripts loaded through here
-	/ script tag up top because yepnope loads required polyfills from here
 	= javascript_include_tag :loader
 
 	/ IE-specific styles for older versions
 	\<!--[if lt IE 9]>
-	\<link href="css/ie.css" media="screen" rel="stylesheet" type="text/css" />
+	/ use the html5shiv - https://github.com/aFarkas/html5shiv
+	= javascript_include_tag :'libs/html5shiv-printshiv-3.6.2.min'
+	/ IE specific styles
+	= stylesheet_link_tag :'ie.css'
 	\<![endif]-->

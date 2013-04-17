@@ -13,12 +13,7 @@ yepnope [
 		nope: 'js/ie-polyfill.js'
 	},
 	{
-		# check for html5 support for testing <canvas> support
-		test: !!document.createElement('canvas').getContext
-		nope: 'js/libs/html5shiv-printshiv-3.6.2.min.js'
-	},
-	{
-		# if IE, we need jQuery. Otherwise, Zepto will do just fine
+		# if oldIE, we need jQuery. Otherwise, Zepto will do just fine
 		test: '__proto__' of {}
 		yep: '//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'
 		nope: '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js'
@@ -27,7 +22,7 @@ yepnope [
 			!Zepto? and !window.jQuery? and yepnope('js/libs/jquery-1.9.1.min.js')
 	},
 	{
-		# Load generic scripts for everyone
+		# finally, load dependant scripts for everyone
 		load: ['js/script.js']
 	}
 ]

@@ -1,14 +1,9 @@
 .l-container
 	.l-col-container
-		.l-primary
+		%article.l-primary
 			%h2.m-hr-a Primary Content
 			
 			.l-segment
-				%section
-					<strong>This is a section</strong>
-					=lorem.paragraph
-				\<strong>This is after the section</strong>
-
 				%p=lorem.paragraph
 				%p
 					%a{ :href => '#more-content', :class => 'more' }
@@ -50,7 +45,7 @@
 						%p=lorem.paragraph
 						%p=lorem.paragraph
 
-		.l-sidebar
+		%aside.l-sidebar
 			%h2.m-hr-a Sidebar
 			- for i in 1..2
 				.l-segment
