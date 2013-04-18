@@ -7,45 +7,39 @@ Core components are:
 * feature-aware script loading via [yepnope.js](http://yepnopejs.com/)
 * inspiration from the [HTML5 Boilerplate](http://html5boilerplate.com/)
 * mobile-first design using the [SMACSS](http://smacss.com/) approach
-* [jQuery](http://jquery.com/)
-* [Respond](https://github.com/scottjehl/Respond)
-* [Selectivizr](http://selectivizr.com/)
-* [Zepto](http://zeptojs.com/)
+* [Zepto](http://zeptojs.com/) with a fallback to [jQuery](http://jquery.com/) if needed
+* [Respond](https://github.com/scottjehl/Respond), [html5shiv](https://github.com/aFarkas/html5shiv), and [Selectivizr](http://selectivizr.com/) for oldIE
 
 Component Details
 ----
 
 *Open the index file to view an example of all components in action.*
 
-* Initiated Middleman project complete with a basic layout in HAML and a config file with suggested settings.
+* Middleman template complete with a basic demo written in HAML, CoffeeScript, and SASS and a config file with recommended settings.
 * HTML5
-  * all template elements have been laid out to be friendly to addtional responsive styles
-  * loosely based on the HTML5 Boilerplate
+  * all template elements have been laid out to be friendly to additional responsive styles
+  * inspired by the HTML5 Boilerplate
+  * completely disables IE's Compatibility View
 * JavaScript
   * script loading via yepnope. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
   * all scripts written with CoffeeScript
-  * html5shiv for oldIE support
-  * loading global JS through yepnope's load() function
-  * testing for CSS3 support and loading JavaScripts to compensate on failure
-  * loading Zepto if not IE, jQuery if IE, plus a local jQuery fallback if neither succeed
 * SASS w/ Compass
   * all styles are minimalistic, responsive, and never nested beyond 2 SASS levels.
   * utilizing the SMACSS approach to CSS organization and selectors
   * all elements use the border-box box-sizing style
-  * a few generic column layouts between two and five columns wide which resize and realign responsively
-* humans.txt and robots.txt
+  * a basis for column layouts which resize and realign responsively
+* [humans.txt](source/humans.txt) and [robots.txt](source/robots.txt)
 
 Getting Started
 ----
 
 ### Installation
-If it doesn't already exist, create ```~/.middleman```:
+If it doesn't already exist, create ```~/.middleman``` and move to it:
 ```
-$ mkdir -p ~/.middleman
+$ mkdir -p ~/.middleman && cd ~/.middleman
 ```
-Clone the repository to this directory:
+Clone the repository:
 ```
-$ cd ~/.middleman
 $ git clone git@github.com:ridgehkr/yabp.git
 ```
 
