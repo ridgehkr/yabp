@@ -23,9 +23,10 @@ Component Details
 * JavaScript
   * script loading via yepnope. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
   * all scripts written with CoffeeScript
-* SASS w/ Compass
+* CSS
+  * written in SASS and Compass
+  * mobile-first CSS using the [SMACSS](http://smacss.com/) approach
   * all styles are minimalistic, responsive, and never nested beyond 2 SASS levels.
-  * utilizing the SMACSS approach to CSS organization and selectors
   * all elements use the border-box box-sizing style
   * a basis for column layouts which resize and realign responsively
 * [humans.txt](source/humans.txt) and [robots.txt](source/robots.txt)
