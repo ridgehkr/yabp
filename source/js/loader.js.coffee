@@ -1,6 +1,6 @@
 # All javascripts should be loaded from this file.
 
-# using yepnope for script loading
+# using yepnope for the script loading below
 #= require libs/yepnope-1.5.min
 
 yepnope [
@@ -9,6 +9,7 @@ yepnope [
 		# the pollyfill script loads the following via Sprockets:
 		#	- selectivizr 1.0.2
 		#	- respond 1.1.0
+		# note that the html5shiv is loaded via script tag in the document head
 		test: CSSMediaRule?
 		nope: 'js/ie-polyfill.js'
 	},

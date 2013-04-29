@@ -1,0 +1,23 @@
+a {
+	@include link-colors($link-color, $link-color, $link-color, $link-color, $link-color);
+}
+
+// navigation
+.m-main-nav {
+	.nav-item {
+		font-size: $min-text-size;
+	}
+	.nav-item + .nav-item {
+		border-left: 1px dotted #ccc;
+	}
+	a {
+		text-transform: uppercase;
+		text-decoration: none;
+		@include transition-property("color");
+		@include transition-duration($time-quick);
+		@include transition-timing-function(ease-in-out);
+		&:hover {
+			@include link-colors($text-color, $text-color, $text-color, $text-color, $text-color);
+		}
+	}
+}

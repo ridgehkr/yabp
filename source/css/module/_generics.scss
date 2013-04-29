@@ -10,7 +10,7 @@ a {
 		height: 0;
 		border-top: ($content-spacing / $golden-ratio) solid transparent;
 		border-bottom: ($content-spacing / $golden-ratio) solid transparent;
-		border-left: $content-spacing solid $text-color;
+		border-left: $content-spacing solid lighten($text-color, 50%);
 	}
 }
 
@@ -46,7 +46,7 @@ code {
 .m-bullets {
 	li {
 		position: relative;
-		padding-left: $base-font-size / 2;
+		padding-left: $base-font-size;
 		&:before {
 			position: absolute;
 			top: 0;
@@ -54,7 +54,7 @@ code {
 			left: 0;
 			height: 100%;
 			content: '•';
-			line-height: $base-font-size * 1.3;
+			line-height: $base-font-size * $golden-ratio;
 			display: block;
 		}
 	}
@@ -74,7 +74,7 @@ code {
 
 // headers
 .m-hr-a {
-	font-family: $serif;
+	font-family: $fontin;
 	font-weight: normal;
 	color: $text-color;
 	padding: 0;
@@ -84,7 +84,7 @@ code {
 	}
 }
 .m-hr-b {
-	font-family: $sans-serif;
+	font-family: $fontin;
 	font-weight: lighter;
 	color: $text-color;
 	margin: 0 0 $vertical-space;

@@ -24,14 +24,21 @@ $large: $outer-width;
 $serif: Georgia, serif !default;
 $sans-serif: Helvetica, Arial, sans-serif !default;
 $monospace: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
-$text-color: #212121;
+$fontin: "fontin_sans_rgregular", Arial, Verdana, sans-serif;
+$text-color: #313131;
 $link-color: #fa0000;
-$text-size: 16px;
+$text-size: 20px;
 $line-height: $text-size * $golden-ratio;
-$min-text-size: 13px;
+$min-text-size: 14px;
 $min-line-height: $min-text-size * $golden-ratio;
 
 // text effects
 $default-text-shadow-color: rgba(0,0,0,0.7) !default;
 $default-text-shadow-blur: 1px !default;
 $default-text-shadow-v-offset: 1px !default;
+
+// resource URI
+$fonts-dir: "/fonts";
+
+// transition settings
+$time-quick: .15s;

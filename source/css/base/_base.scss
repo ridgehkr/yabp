@@ -1,7 +1,7 @@
 * { @include box-sizing(border-box); }
 
 body {
-	font-family: $sans-serif;
+	font-family: $serif;
 	@include med-font;
 	color: $text-color;
 }
@@ -15,7 +15,6 @@ p, ul {
 
 a {
 	outline: 0;
-	@include link-colors($link-color, $link-color, $link-color, $link-color, $link-color);
 }
 
 // make images responsive
