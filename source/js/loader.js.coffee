@@ -3,14 +3,17 @@
 # using yepnope for the script loading below
 #= require libs/yepnope-1.5.min
 
+# using Paul Irish's matchMedia to test for media query support
+#= require libs/matchMedia
+
 yepnope [
 	{
 		# Add oldIE support for CSS3 selectors and media queries
-		# the pollyfill script loads the following via Sprockets:
+		# the pollyfill script loads the following:
 		#	- selectivizr 1.0.2
 		#	- respond 1.1.0
 		# note that the html5shiv is loaded via script tag in the document head
-		test: CSSMediaRule?
+		test: matchMedia('only all').matches
 		nope: 'js/ie-polyfill.js'
 	},
 	{

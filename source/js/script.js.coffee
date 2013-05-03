@@ -12,10 +12,9 @@ class Application
 	content: ->
 		# initialize content-helping JS here
 
-		@isTouchDevice = 'ontouchstart' of document.documentElement
+		# Application.touch_enabled - true if the client is using a touch device
+		@touch_enabled = 'ontouchstart' of document
 	
 $ ->
 	# kick off all JS to be executed at page load and get the app ready for use
 	yabp = new Application
-
-	console?.log 'this is' + (if yabp.isTouchDevice then "" else "n't") + ' a touch device'
