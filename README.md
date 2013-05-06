@@ -1,13 +1,14 @@
 Yet Another Boilerplate (YABP) 0.0.2
 ====
 
-This Middleman boilerplate project was originally created to help me get a head start on new front-end development and uses SASS, HAML, and CoffeeScript.
+This boilerplate was originally created to help me get a head start on new middleman projects and uses SASS, HAML, and CoffeeScript.
 
 Core components are:
 * feature-aware script loading via [yepnope.js](http://yepnopejs.com/)
 * inspiration from the [HTML5 Boilerplate](http://html5boilerplate.com/)
 * mobile-first design using the [SMACSS](http://smacss.com/) approach
-* [Zepto](http://zeptojs.com/) with a fallback to [jQuery](http://jquery.com/) if needed
+* [matchMedia](https://github.com/paulirish/matchMedia.js) to test for media query support
+* [Zepto](http://zeptojs.com/) with a fallback to [jQuery](http://jquery.com/) if not supported
 * [Respond](https://github.com/scottjehl/Respond), [html5shiv](https://github.com/aFarkas/html5shiv), and [Selectivizr](http://selectivizr.com/) for oldIE
 
 Component Details
@@ -26,7 +27,7 @@ Component Details
 * CSS
   * written in SASS and Compass
   * mobile-first CSS using the [SMACSS](http://smacss.com/) approach
-  * all styles are minimalistic, responsive, and never nested beyond 2 SASS levels.
+  * all styles are minimalistic, responsive, easily overridden
   * all elements use the border-box box-sizing style
   * a basis for column layouts which resize and realign responsively
 * [humans.txt](source/humans.txt) and [robots.txt](source/robots.txt)
