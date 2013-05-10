@@ -4,13 +4,14 @@ $golden-ratio: 1.61803398875;
 $serif: Georgia, serif !default;
 $sans-serif: Helvetica, Arial, sans-serif !default;
 $monospace: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+$layout: Layout;
 $fontin: "fontin_sans_rgregular", Arial, Verdana, sans-serif;
 $text-color: #313131;
 $link-color: #fa0000;
 $text-size: 20px;
 $line-height: $text-size * $golden-ratio;
-$min-text-size: $text-size / $golden-ratio;
-$min-line-height: $text-size;
+$min-text-size: 14px;
+$min-line-height: $min-text-size * $golden-ratio;
 
 // padding and spacing
 $content-spacing: $text-size / 2;

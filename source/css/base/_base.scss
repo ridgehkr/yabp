@@ -4,6 +4,10 @@ body {
 	font-family: $serif;
 	@include med-font;
 	color: $text-color;
+
+	// a little trick for better font rendering - http://www.uxbooth.com/articles/4-tips-and-tricks-for-more-legible-content/
+	text-shadow: 0 0 1px transparent;
+	text-rendering: optimizeLegibility;
 }
 
 p, ul {

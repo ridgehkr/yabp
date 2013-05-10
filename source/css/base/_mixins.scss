@@ -1,3 +1,6 @@
+// LAYOUT
+// to be included in layout classes
+
 // outer page container
 @mixin container {
 	max-width: $outer-width;
@@ -11,7 +14,10 @@
 @mixin col-container {
 	@include container;
 	padding: 0;
-	font-size: 0;
+	font-family: $layout;
+	& > * {
+		font-family: $serif;
+	}
 }
 
 // grid column
@@ -19,7 +25,6 @@
 	width: 100%;
 	@include inline-block;
 	vertical-align: top;
-	font-size: $text-size;
 	margin: $vertical-space 0;
 	&:first-child {
 		margin-top: 0;
@@ -48,7 +53,7 @@
 	}
 }
 
-// font settings
+// FONTS
 @mixin min-font {
 	font-size: $min-text-size;
 	line-height: $min-line-height;
