@@ -1,4 +1,10 @@
+// transition speeds
+$time-quick: .15s;
+
 $golden-ratio: 1.61803398875;
+
+// resource URIs
+$fonts-dir: "/fonts";
 
 // font style variables
 $serif: Georgia, serif !default;
@@ -8,39 +14,34 @@ $layout: Layout;
 $fontin: "fontin_sans_rgregular", Arial, Verdana, sans-serif;
 $text-color: #313131;
 $link-color: #fa0000;
-$text-size: 20px;
+$text-size: 1.6rem; // based on html font-size of 62.5%
 $line-height: $text-size * $golden-ratio;
-$min-text-size: 14px;
+$min-text-size: 1.4rem;
 $min-line-height: $min-text-size * $golden-ratio;
 
 // padding and spacing
 $content-spacing: $text-size / 2;
 $inner-padding: $text-size / $golden-ratio;
-$outer-padding: $text-size;
+$outer-padding: 16px;
 $vertical-space: $text-size * $golden-ratio;
 
 // layout widths
-$outer-width: $text-size * 64;
+$outer-width: 1200px;
+$primary-width: 768px;
+
+// calculate sidebar and workable inner container width
 $outer-real-width: $outer-width - (2 * $outer-padding);
-$primary-width: $text-size * 48; // width of primary column
 $sidebar-width: $outer-real-width - $primary-width;
+
+// convert fixed sidebar and primary content widths to percentages
+$primary-percent-width: percent($primary-width, $outer-real-width); // primary content
+$sidebar-percent-width: percent($sidebar-width, $outer-real-width); // sidebar
 
 // layout config
 $total-cols: 20; // number of columns per container. used within @col-at-breakpoint
 
 // breakpoints (from a max-width perspective)
-$smallest: 420px;
-$small: 620px;
-$medium: 820px;
+$smallest: 400px;
+$small: 600px;
+$medium: 800px;
 $large: $outer-width;
-
-// text effects
-$default-text-shadow-color: rgba(0,0,0,0.7) !default;
-$default-text-shadow-blur: 1px !default;
-$default-text-shadow-v-offset: 1px !default;
-
-// resource URI
-$fonts-dir: "/fonts";
-
-// transition settings
-$time-quick: .15s;

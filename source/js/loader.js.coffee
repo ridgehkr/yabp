@@ -1,23 +1,11 @@
 # All javascripts should be loaded from this file.
 
-# using yepnope for the script loading below
-#= require libs/yepnope-1.5.min
+# using Modernizr for the script loading below. Feel free to use just YepNope instead if you don't need Modernizr
+#= require libs/modernizr-2.6.2.min
 
-# using Paul Irish's matchMedia to test for media query support
-#= require libs/matchMedia
-
-yepnope [
+Modernizr.load [
 	{
-		# Add oldIE support for CSS3 selectors and media queries
-		# the pollyfill script loads the following:
-		#	- selectivizr 1.0.2
-		#	- respond 1.1.0
-		# note that the html5shiv is loaded via script tag in the document head
-		test: matchMedia('only all').matches
-		nope: 'js/ie-polyfill.js'
-	},
-	{
-		# if oldIE, we need jQuery. Otherwise, Zepto will do just fine
+		# if IE, we need jQuery. Otherwise, Zepto will do just fine
 		test: '__proto__' of {}
 		yep: '//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'
 		nope: '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js'

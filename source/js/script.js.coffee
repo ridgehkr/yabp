@@ -20,3 +20,22 @@ class Application
 $ ->
 	# kick off all JS to be executed at page load and get the app ready for use
 	yabp = new Application
+
+# Rewritten version for correcting a screen-zoom issue on rotation in iOS
+# By @mathias, @cheeaun and @jdalton
+((doc)->
+	addEvent = 'addEventListener'
+	type = 'gesturestart'
+	qsa = 'querySelectorAll'
+	scales = [1, 1]
+	meta = if qsa of doc then doc[qsa]('meta[name=viewport]') else []
+
+	fix = ->
+		meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1]
+		doc.removeEventListener(type, fix, true)
+
+	if (meta = meta[meta.length - 1]) and addEvent of doc
+		do fix
+		scales = [0.25, 1.6]
+		doc[addEvent](type, fix, true)
+)(document)

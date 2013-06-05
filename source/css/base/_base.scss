@@ -1,5 +1,7 @@
 * { @include box-sizing(border-box); }
 
+html { font-size: 62.5%; } 
+
 body {
 	font-family: $serif;
 	@include med-font;

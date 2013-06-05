@@ -91,3 +91,12 @@ Example:
 
 ### The Media Box
 YABP includes basic media embed styles which allow you to insert responsive YouTube, Vimeo, or other embedded videos into your page. To make a video embed responsive, simple wrap it with a class of ```.m-media-embed```
+
+
+Browser Support
+----
+* Chrome
+* Firefox
+* Opera
+* Safari
+* IE 9+

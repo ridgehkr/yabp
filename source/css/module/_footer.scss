@@ -14,10 +14,10 @@
 	.nav-item {
 		display: block;
 		text-align: left;
-		padding: ($text-size / 2) 0;
+		padding: $content-spacing 0;
 	}
 	a {
 		@include min-font;
-		padding: ($min-text-size / 2) 0;
+		padding: $content-spacing 0;
 	}
 }

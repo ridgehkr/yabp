@@ -6,11 +6,13 @@
 	=partial "common/document-head", :locals => { :site_title => $siteTitle }
 
 	- if defined?($bodyClass)
-		= '<!--[if IE 7]> <body class="ie7 lt-ie9 lt-ie8 ' + $bodyClass + '"> <![endif]--><!--[if IE 8]> <body class="ie8 lt-ie9 ' + $bodyClass + '"> <![endif]--><!--[if gt IE 8]><!--> <body class="' + $bodyClass + '"> <!--<![endif]-->'
+		<!--[if IE 7]> <body class="ie7 lt-ie9 lt-ie8 ' + $bodyClass + '"> <![endif]-->
+		<!--[if IE 8]> <body class="ie8 lt-ie9 ' + $bodyClass + '"> <![endif]-->
+		<!--[if gt IE 8]><!--> <body class="' + $bodyClass + '"> <!--<![endif]-->'
 	- else
-		\<!--[if IE 7]> <body class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
-		\<!--[if IE 8]> <body class="no-js ie8 lt-ie9"> <![endif]-->
-		\<!--[if gt IE 8]><!--> <body class="no-js"> <!--<![endif]-->
+		<!--[if IE 7]> <body class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]> <body class="no-js ie8 lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <body class="no-js"> <!--<![endif]-->
 
 	= partial "common/header"
 

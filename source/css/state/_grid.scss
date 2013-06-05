@@ -1,11 +1,16 @@
 // sidebar and main content areas
 .l-primary {
-	@include col-at-breakpoint($medium, 14, false);
+	@media(min-width:$medium) {
+		width: $primary-percent-width;
+	}
 }
 .l-sidebar {
-	@include col-at-breakpoint($medium, 6, false);
+	@media(min-width:$medium) {
+		width: $sidebar-percent-width;
+	}
 	margin-top: 0;
 }
+
 // to make a container be the entire width of its container
 .full-width {
 	@media (min-width:$medium) {
@@ -14,13 +19,19 @@
 		display: block;
 	}
 }
+
+// generic layout column
 .l-col {
 	@media (min-width:$small) {
 		margin: 0;
 	}
 }
+
+// two-column layout
 .l-halves {
 	.l-col {
-		@include col-at-breakpoint($small, 2);
+		@media (min-width:$small) {
+			width: 49.999999%;
+		}
 	}
 }
