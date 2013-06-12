@@ -3,7 +3,6 @@
 a {
 	&.more:before {
 		content: '';
-		@include inline-block;
 		padding-right: $content-spacing / 2;
 		font-size: $text-size * $golden-ratio;
 		width: 0;
@@ -11,6 +10,7 @@ a {
 		border-top: ($content-spacing / $golden-ratio) solid transparent;
 		border-bottom: ($content-spacing / $golden-ratio) solid transparent;
 		border-left: $content-spacing solid lighten($text-color, 50%);
+		@include inline-block;
 	}
 }
 
@@ -29,9 +29,9 @@ code {
 	border: 1px solid #ccc;
 	background-color: #f1f1f1;
 	font-family: $monospace;
+	padding: 0 .5rem;
 	@include inline-block;
 	@include min-font;
-	padding: 0 .1em;
 	&.block {
 		display: block;
 		padding: $content-spacing;

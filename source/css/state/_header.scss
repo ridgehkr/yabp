@@ -10,8 +10,8 @@
 			@include col-container;
 		}
 		.nav-item {
-			@include inline-block;
 			font-size: $text-size;
+			@include inline-block;
 		}
 	}
 }

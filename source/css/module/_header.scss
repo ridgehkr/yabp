@@ -6,11 +6,11 @@
 }
 
 .m-logo {
-	@include inline-block;
 	margin: 0 0 $vertical-space $outer-padding;
 	margin: 0 auto;
 	display: block;
 	text-align: center;
+	@include inline-block;
 }
 
 .m-main-nav {

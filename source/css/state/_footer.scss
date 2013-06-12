@@ -1,3 +1,4 @@
+// footer nav that's stacked in mobile and inline on larger screens
 .footer-nav {
 	@media (min-width: $small) {
 		.nav-list {
@@ -11,10 +12,10 @@
 			}
 		}
 		.nav-item {
-			@include inline-block;
-			vertical-align: top;
 			width: 24%;
 			text-align: center;
+			@include inline-block;
+			vertical-align: top; // overrides vertical-align: middle; in the inline-block include
 		}
 	}
 }

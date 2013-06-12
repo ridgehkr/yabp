@@ -11,9 +11,9 @@
 
 // grid column wrapper
 @mixin col-container {
-	@include container;
 	padding: 0;
 	font-family: $layout;
+	@include container;
 	& > * {
 		font-family: $serif;
 	}
@@ -22,9 +22,9 @@
 // grid column
 @mixin col {
 	width: 100%;
-	@include inline-block;
-	vertical-align: top;
 	margin: $vertical-space 0;
+	@include inline-block;
+	vertical-align: top; // overrides vertical-align: middle; in the inline-block include
 	&:first-child {
 		margin-top: 0;
 	}

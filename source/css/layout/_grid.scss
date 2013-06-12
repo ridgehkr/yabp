@@ -38,10 +38,10 @@
 // evenly-spaced grid items
 .l-grid-item {
 	font-size: $text-size;
-	@include inline-block;
-	vertical-align: top;
 	width: 100%;
 	background: #ccc;
 	padding-bottom: percent(1, 5.5);
 	margin-bottom: (1 / 7) * (1 / 7) * 100%;
+	@include inline-block;
+	vertical-align: top; // overrides vertical-align: middle; in the inline-block include
 }
