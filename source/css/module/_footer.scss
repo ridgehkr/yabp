@@ -6,18 +6,14 @@
 
 // footer navigation
 .footer-nav {
-	text-align: center;
-	.nav-list {
-		@include inline-block;
-		max-width: $sidebar-width;
-	}
+	text-align: left;
 	.nav-item {
 		display: block;
 		text-align: left;
 		padding: $content-spacing 0;
+		@include min-font;
 	}
 	a {
-		@include min-font;
 		padding: $content-spacing 0;
 	}
 }
