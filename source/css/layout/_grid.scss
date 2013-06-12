@@ -23,3 +23,25 @@
 .l-halves {
 	@include col-container;
 }
+
+// container for evenly-spaced grid items
+.l-spaced-grid {
+	text-align: justify;
+	font-size: 0;
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+// evenly-spaced grid items
+.l-grid-item {
+	font-size: $text-size;
+	@include inline-block;
+	vertical-align: top;
+	width: 100%;
+	background: #ccc;
+	padding-bottom: percent(1, 5.5);
+	margin-bottom: (1 / 7) * (1 / 7) * 100%;
+}

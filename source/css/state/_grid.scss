@@ -35,3 +35,15 @@
 		}
 	}
 }
+
+.l-grid-item {
+	@media (min-width:$smallest) {
+		width: 49%;
+	}
+	@media (min-width:$small) {
+		width: 32%;
+	}
+	@media (min-width:$medium) {
+		width: percent(1, 5.5);
+	}
+}
