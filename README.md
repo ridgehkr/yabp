@@ -17,10 +17,10 @@ Component Details
 
 *Browse to the index file to view an example of all components in action.*
 
-* Middleman template complete with a basic demo written in HAML, CoffeeScript, and SASS and a config file with recommended settings.
+* Middleman template complete with a basic demo written in HAML, CoffeeScript, and SASS and a [config file](config.rb) with recommended settings.
 * completely disables IE's Compatibility View
-* script loading via yepnope within Modernizr. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
-* all styles are minimalistic, responsive, easily overridden
+* script loading via yepnope within Modernizr. Feel free to replace it with your own build, but keep in mind that [loader.js.coffee](source/js/loader.js.coffee) may need to be changed to match. 
+* all styles are minimalistic, responsive, and easily overridden
 * a basic column setup for an inline-block style layout
 * [humans.txt](source/humans.txt) and [robots.txt](source/robots.txt)
 
@@ -59,7 +59,7 @@ YABP comes with a very basic grid system. It's not intended to be an invasive, a
 
 * ```.l-container``` constrains width to the defined ```$outer-width``` value inside css/base/_base.scss
 * ```.l-col-container``` used to wrap ```.l-col``` elements. Uses the Layout font family to get rid of all spacing between columns. It is recommended that you extend this class to create halves / thirds / quarters etc. column containers. A two-column container, ```.l-halves```, has already been created for you.
-* ```l-col``` is a basic column container. Nest inside .l-col-container and set a percentage width to create a column layout.
+* ```l-col``` is a basic column container. Nest inside ```.l-col-container``` and set a percentage width to create a column layout.
 * ```.l-spaced-grid``` wraps a grid of evenly-spaced columns. Child elements must be ```.l-grid-item```
 * ```.l-grid-item``` defines evenly-spaced columns of a grid. The space between columns will be defined as the leftover percentage not used up by the item width. For example, a width of 24% will evenly space 4% of the container's width in between columns.
 
