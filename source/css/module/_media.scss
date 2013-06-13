@@ -1,0 +1,32 @@
+// media elements
+.media-feature {
+	width: 100%;
+	max-width: none;
+	.media-wrap { // wrap the media item with this class
+		display: block;
+		text-align: center;
+		margin-bottom: $content-spacing;
+	}
+	.proceed { // use as a "more" link for the media element
+		display: block;
+		margin: $content-spacing 0;
+	}
+}
+
+// preserves the aspect ratio of videos embedded via YouTube, Vimeo, etc.
+// wrap embedded videos with a block-level element of this class
+.m-media-embed {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	object, embed, iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// import the state for these modules
+@import "../state/media";

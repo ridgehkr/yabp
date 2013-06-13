@@ -1,54 +1,8 @@
 /* ===== LAYOUT ==== */
 
-// outer page container
-@mixin container {
-	max-width: $outer-width;
-	margin: 0 auto;
-	overflow: hidden;
-	width: 100%;
-	padding: 0 $outer-padding;
-}
-
-// grid column wrapper
-@mixin col-container {
-	padding: 0;
-	font-family: $layout;
-	@include container;
-	& > * {
-		font-family: $serif;
-	}
-}
-
-// grid column
-@mixin col {
-	width: 100%;
-	margin: $vertical-space 0;
-	@include inline-block;
-	vertical-align: top; // overrides vertical-align: middle; in the inline-block include
-	&:first-child {
-		margin-top: 0;
-	}
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
-
-// defines a page region
-@mixin page-segment {
-	width: 100%;
-	margin: $vertical-space 0;
-}
-
-// set the width of columns at a given breakpoint
-// either have the columns be equal percentages in width or percentage based on given total columns
-@mixin col-at-breakpoint($breakpoint, $num-cols) {
-	@media (min-width:$breakpoint) {
-		width: percent(100 / $num-cols, 100);
-	}
-}
-
-// import all layout styles in the desired order
-@import "generics";
+// import all module styles in the desired order
+// comment out any segments you don't need
+@import "page-segments";
 @import "grid";
 
 /* ===== /LAYOUT ==== */

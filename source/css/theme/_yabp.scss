@@ -2,21 +2,40 @@ a {
 	@include link-colors($link-color, $link-color, $link-color, $link-color, $link-color);
 }
 
-// navigation
-.m-main-nav {
-	.nav-item {
-	}
-	.nav-item + .nav-item {
-		border-left: 1px dotted #ccc;
-	}
+.m-hr-a {
+	font-family: $fontin;
+	font-weight: normal;
+	color: $text-color;
+	padding: 0;
+	margin: 0;
 	a {
-		text-transform: uppercase;
-		text-decoration: none;
-		@include transition-property("color");
-		@include transition-duration($time-quick);
-		@include transition-timing-function(ease-in-out);
-		&:hover {
-			@include link-colors($text-color, $text-color, $text-color, $text-color, $text-color);
+		@include link-colors($text-color, $text-color, $text-color, $text-color, $text-color);
+	}
+}
+.m-hr-b {
+	font-family: $fontin;
+	font-weight: lighter;
+	color: $text-color;
+	margin: 0;
+}
+
+// list styles tweaked slightly to allow for bullet appearance customization
+.m-bullets {
+	li {
+		position: relative;
+		&:before {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			height: 100%;
+			content: '•';
+			line-height: $base-font-size * $golden-ratio;
+			display: block;
 		}
 	}
+	ul {
+		margin-left: $base-font-size;
+	}
+	@include minimized-list;
 }

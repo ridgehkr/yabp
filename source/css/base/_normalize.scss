@@ -4,6 +4,11 @@
    HTML5 display definitions
    ========================================================================== */
 
+//
+// YABP NOTE: removed all "border-box" styles because of base border-box style set in _base.scss
+//
+
+
 /**
  * Correct `block` display not defined in IE 8/9.
  */
@@ -335,14 +340,12 @@ html input[disabled] {
 }
 
 /**
- * 1. Address box sizing set to `content-box` in IE 8/9.
- * 2. Remove excess padding in IE 8/9.
+ * Remove excess padding in IE 8/9.
  */
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
+    padding: 0;
 }
 
 /**

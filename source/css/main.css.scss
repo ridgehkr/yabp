@@ -9,6 +9,5 @@
 // root files used to import categorized styles in the desired order
 @import "base/root";
 @import "layout/root";
-@import "module/root";
-@import "state/root";
+@import "module/root"; // includes state files
 @import "theme/root";

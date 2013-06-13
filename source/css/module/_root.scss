@@ -1,8 +1,10 @@
 /* ===== MODULE ==== */
 
 // import all module styles in the desired order
+// comment out any segments you don't need
+@import "headers";
+@import "lists";
+@import "media";
 @import "generics";
-@import "header";
-@import "footer";
 
 /* ===== /MODULE ==== */

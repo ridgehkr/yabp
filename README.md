@@ -7,29 +7,21 @@ Core components are:
 * feature-aware script loading via [yepnope.js](http://yepnopejs.com/)
 * inspiration from the [HTML5 Boilerplate](http://html5boilerplate.com/)
 * mobile-first design using the [SMACSS](http://smacss.com/) approach
-* [matchMedia](https://github.com/paulirish/matchMedia.js) to test for media query support
+* [Modernizr](http://modernizr.com/) for scripe loading and feature testing
 * [Zepto](http://zeptojs.com/) with a fallback to [jQuery](http://jquery.com/) if not supported
-* [Respond](https://github.com/scottjehl/Respond), [html5shiv](https://github.com/aFarkas/html5shiv), and [Selectivizr](http://selectivizr.com/) for oldIE
+* modern browser support (Chrome, FF, Safari, Opera, IE 9+)
+* styles are created with SASS, so components can be easily commented out
 
 Component Details
 ----
 
-*Open the index file to view an example of all components in action.*
+*Browse to the index file to view an example of all components in action.*
 
 * Middleman template complete with a basic demo written in HAML, CoffeeScript, and SASS and a config file with recommended settings.
-* HTML5
-  * all template elements have been laid out to be friendly to additional responsive styles
-  * inspired by the HTML5 Boilerplate
-  * completely disables IE's Compatibility View
-* JavaScript
-  * script loading via yepnope. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
-  * all scripts written with CoffeeScript
-* CSS
-  * written in SASS and Compass
-  * mobile-first CSS using the [SMACSS](http://smacss.com/) approach
-  * all styles are minimalistic, responsive, easily overridden
-  * all elements use the border-box box-sizing style
-  * a basis for column layouts which resize and realign responsively
+* completely disables IE's Compatibility View
+* script loading via yepnope within Modernizr. Feel free to replace it with your own build, but keep in mind that js/loader.js.coffee may need to be changed to match. 
+* all styles are minimalistic, responsive, easily overridden
+* a basic column setup for an inline-block style layout
 * [humans.txt](source/humans.txt) and [robots.txt](source/robots.txt)
 
 Getting Started
@@ -63,40 +55,16 @@ $ middleman server
 Point your browser to ```http://0.0.0.0:4567``` and start coding!
 
 ### The Grid
-YABP comes with a very basic grid system. It's not intended to be an invasive, all-encompasing grid system such as Blueprint or Bootstrap's, just organizational blocks for sub-content layout.
+YABP comes with a very basic grid system. It's not intended to be an invasive, all-encompasing grid system such as Blueprint or Bootstrap's, just organizational containers and child blocks for your basic layout needs.
 
-To constrain the width of your content to the defined ```$outer-width``` value inside ```css/main.scss```, wrap in a div with the class ```l-container```
-
-To create a column layout, create a wrapping div with the appriate class (```l-halves``` which is built in, but feel free to add your own), then create the appropriate number of child elements and give them the ```l-col``` class.
-
-For example, this will generate a two-column grid constrained by the max-width of ```$outer-width```:
-```haml
-.l-container
-    .l-halves
-        .l-col This is column 1
-        .l-col This is column 2
-```
-
-You can create faux borders for the two-column layouts. This uses the ::before pseudo-element to generate borders to match the height of the containing element, which means you don't need JavaScript to equalize the height of your columns to make their borders line up.
-
-To create faux columns, add the ```l-faux-columns``` class to your ```l-halves``` element. 
-
-Example:
-```haml
-.l-container
-    .l-halves.l-faux-columns
-        .l-col This is column 1
-        .l-col This is column 2
-```
+* ```.l-container``` constrains width to the defined ```$outer-width``` value inside css/base/_base.scss
+* ```.l-col-container``` used to wrap ```.l-col``` elements. Uses the Layout font family to get rid of all spacing between columns. It is recommended that you extend this class to create halves / thirds / quarters etc. column containers. A two-column container, ```.l-halves```, has already been created for you.
+* ```l-col``` is a basic column container. Nest inside .l-col-container and set a percentage width to create a column layout.
+* ```.l-spaced-grid``` wraps a grid of evenly-spaced columns. Child elements must be ```.l-grid-item```
+* ```.l-grid-item``` defines evenly-spaced columns of a grid. The space between columns will be defined as the leftover percentage not used up by the item width. For example, a width of 24% will evenly space 4% of the container's width in between columns.
 
 ### The Media Box
 YABP includes basic media embed styles which allow you to insert responsive YouTube, Vimeo, or other embedded videos into your page. To make a video embed responsive, simple wrap it with a class of ```.m-media-embed```
 
-
-Browser Support
-----
-* Chrome
-* Firefox
-* Opera
-* Safari
-* IE 9+
+### The Inline List
+A simple no-space inline list called ```.inline-list``` has been created to base horizontal navigation, tabs, etc. off of.

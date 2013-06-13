@@ -8,10 +8,9 @@
 			%h2.m-hr-a Primary Content
 			
 			.l-segment
-				%p=lorem.paragraph
 				%p
-					%a{ :href => '#more-content', :class => 'more' }
-						Example link to more content using the <code>.more</code> class
+					=lorem.sentences 2
+					=link_to ' example link in content.', '#'
 				%p=lorem.sentences 2
 			.l-segment
 				%h2.m-hr-b Grid

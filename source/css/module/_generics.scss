@@ -1,122 +1,56 @@
-// special anchors
-//	.more creates a right-pointing arrow before the anchor element
-a {
-	&.more:before {
-		content: '';
-		padding-right: $content-spacing / 2;
-		font-size: $text-size * $golden-ratio;
-		width: 0;
-		height: 0;
-		border-top: ($content-spacing / $golden-ratio) solid transparent;
-		border-bottom: ($content-spacing / $golden-ratio) solid transparent;
-		border-left: $content-spacing solid lighten($text-color, 50%);
-		@include inline-block;
+// navigation
+.m-main-nav {
+	background: #f1f1f1;
+	.nav-item + .nav-item {
+		border-left: 1px dotted #ccc;
 	}
-}
-
-// generic content elements
-p, ul {
-	margin: $vertical-space 0;
-	&:first-child {
-		margin-top: 0;
-	}
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
-
-code {
-	border: 1px solid #ccc;
-	background-color: #f1f1f1;
-	font-family: $monospace;
-	padding: 0 .5rem;
-	@include inline-block;
-	@include min-font;
-	&.block {
+	a {
+		text-transform: uppercase;
+		text-decoration: none;
 		display: block;
-		padding: $content-spacing;
-	}
-	pre {
-		margin: 0;
-	}
-}
-// end generic content elements
-
-// list styles tweaked slightly to allow for bullet appearance customization
-.m-bullets {
-	li {
-		position: relative;
-		padding-left: $base-font-size;
-		&:before {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			height: 100%;
-			content: '•';
-			line-height: $base-font-size * $golden-ratio;
-			display: block;
+		padding: .5em .7em;
+		@include transition-property("color");
+		@include transition-duration($time-quick);
+		@include transition-timing-function(ease-in-out);
+		&:hover {
+			color: $text-color;
 		}
 	}
-	ul {
-		margin-left: $content-spacing;
-	}
 }
 
-// inline navigation items
-.inline-nav {
-	font-size: 0;
+// page header area
+.page-header {
+	margin-bottom: $vertical-space;
+}
+
+.m-logo {
+	margin: 0 0 $vertical-space $outer-padding;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	@include inline-block;
+}
+
+// page footer area
+.page-footer {
+	border-top: 1px dotted;
+	margin-top: $vertical-space;
+}
+
+// footer navigation
+.footer-nav {
+	text-align: left;
 	.nav-item {
-		font-size: $text-size;
-		@include inline-block;
+		display: block;
+		text-align: left;
+		padding: $content-spacing 0;
+		@include min-font;
 	}
-}
-
-// headers
-.m-hr-a {
-	font-family: $fontin;
-	font-weight: normal;
-	color: $text-color;
-	padding: 0;
-	margin: 0;
 	a {
-		@include link-colors($text-color, $text-color, $text-color, $text-color, $text-color);
-	}
-}
-.m-hr-b {
-	font-family: $fontin;
-	font-weight: lighter;
-	color: $text-color;
-	margin: 0;
-}
-// end headers
-
-// media elements
-.media-feature {
-	width: 100%;
-	max-width: none;
-	.media-wrap { // wrap the media item with this class
-		display: block;
-		text-align: center;
-		margin-bottom: $content-spacing;
-	}
-	.proceed { // use as a "more" link for the media element
-		display: block;
-		margin: $content-spacing 0;
+		padding: $content-spacing 0;
 	}
 }
 
-// preserves the aspect ratio of videos embedded via YouTube, Vimeo, etc.
-// wrap embedded videos with a block-level element of this class
-.m-media-embed {
-	position: relative;
-	padding-bottom: 56.25%;
-	height: 0;
-	object, embed, iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
+
+// import the state for these modules
+@import "../state/generics";

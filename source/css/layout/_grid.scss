@@ -1,3 +1,37 @@
+// outer page container
+@mixin container {
+	max-width: $outer-width;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 100%;
+	padding: 0 $outer-padding;
+}
+
+// grid column wrapper
+@mixin col-container {
+	@include container;
+	padding: 0; // overriding @container's padding
+	font-family: $layout;
+	& > * {
+		font-family: $serif;
+	}
+}
+
+// grid column
+@mixin col {
+	width: 100%;
+	margin: $vertical-space 0;
+	@include inline-block;
+	vertical-align: top; // overrides vertical-align: middle; in the inline-block include
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
 // can be used to wrap nearly anything
 .l-container {
 	@include container;
@@ -18,8 +52,7 @@
 	@include col;
 }
 
-// extending the column container
-// implies that child columns will be 50% of their parent's width
+// creates a two-column layout
 .l-halves {
 	@include col-container;
 }
@@ -27,11 +60,14 @@
 // container for evenly-spaced grid items
 .l-spaced-grid {
 	text-align: justify;
-	font-size: 0;
+	font-family: $layout;
 	&:after {
 		content: '';
 		display: inline-block;
 		width: 100%;
+	}
+	& > * {
+		font-family: $serif;
 	}
 }
 
@@ -45,3 +81,6 @@
 	@include inline-block;
 	vertical-align: top; // overrides vertical-align: middle; in the inline-block include
 }
+
+// import state styles for the grid
+@import "../state/grid";

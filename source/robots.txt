@@ -1,4 +1,5 @@
 # robotstxt.org/
 
+# change before making live
 User-agent: *
 Disallow: /

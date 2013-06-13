@@ -1,0 +1,18 @@
+// defines a page region
+@mixin page-segment {
+	width: 100%;
+	margin: $vertical-space 0;
+}
+
+// main content wrapper
+.l-main {
+	margin-bottom: $vertical-space;
+}
+
+// logical page segmentation
+.l-segment {
+	@include page-segment;
+}
+
+// import the state for these modules
+@import "../state/page-segments";

@@ -1,0 +1,12 @@
+// inline navigation items
+.inline-list {
+	font-family: $layout;
+	@include minimized-list;
+	.list-item {
+		font-family: $serif;
+		@include inline-block;
+	}
+}
+
+// import the state for these modules
+@import "../state/lists";

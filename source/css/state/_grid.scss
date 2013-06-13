@@ -27,10 +27,10 @@
 	}
 }
 
-// two-column layout
+// creates a two-column layout
 .l-halves {
-	.l-col {
-		@media (min-width:$small) {
+	@media (min-width: $medium) {
+		.l-col {
 			width: 49.999999%;
 		}
 	}

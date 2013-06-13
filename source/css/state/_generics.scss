@@ -3,22 +3,44 @@ a {
 	&:hover {
 		text-decoration: none;
 	}
-	&:active {
+}
 
+.m-logo {
+	@media (min-width:$small) {
+		margin: $vertical-space 0;
+		@include inline-block;
 	}
-	&:focus {
-
+}
+.m-main-nav {
+	@media (min-width:$medium) {
+		.nav-list {
+			@include col-container;
+		}
+		.nav-item {
+			font-size: $text-size;
+			@include inline-block;
+		}
 	}
 }
 
-// media feature a.k.a. figure
-.media-feature {
-	@media (min-width:$medium) {
-		float: right;
-		margin: 0 0 $content-spacing $content-spacing;
-		max-width: 49.999999%;
-		.caption, .proceed {
-			font-size: $min-text-size;
+// footer nav that's stacked in mobile and inline on larger screens
+.footer-nav {
+	@media (min-width: $small) {
+		.nav-list {
+			width: 80%;
+			text-align: justify;
+			margin: 0 auto;
+			&:after {
+				content: '';
+				display: inline-block;
+				width: 100%;
+			}
+		}
+		.nav-item {
+			width: 24%;
+			text-align: center;
+			@include inline-block;
+			vertical-align: top; // overrides vertical-align: middle; in the inline-block include
 		}
 	}
 }

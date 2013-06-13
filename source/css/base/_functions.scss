@@ -1,4 +1,0 @@
-// convert an inner width to a percentage
-@function percent($target, $context) {
-	@return ($target / $context) * 100%;
-}
