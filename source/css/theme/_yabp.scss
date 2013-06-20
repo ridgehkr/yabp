@@ -39,3 +39,12 @@ a {
 	}
 	@include minimized-list;
 }
+
+// design-y, so sticking in the theme
+.m-main-nav {
+	@media (min-width:$medium) {
+		.nav-item + .nav-item {
+			border-left: 1px dotted #ccc;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+.nav-group {
+	@media (min-width: $smallest) {
+		@include column-count(2);
+	}
+}

@@ -8,5 +8,10 @@
 	}
 }
 
+.nav-group {
+	padding-left: 0;
+	list-style: none;
+}
+
 // import the state for these modules
 @import "../state/lists";

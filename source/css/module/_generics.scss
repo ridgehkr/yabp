@@ -1,8 +1,11 @@
 // navigation
 .m-main-nav {
 	background: #f1f1f1;
-	.nav-item + .nav-item {
-		border-left: 1px dotted #ccc;
+	.nav-list {
+		padding-left: 0;
+	}
+	.nav-item {
+		list-style: none;
 	}
 	a {
 		text-transform: uppercase;

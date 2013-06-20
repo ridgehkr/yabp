@@ -13,7 +13,7 @@
 					=link_to ' example link in content.', '#'
 				%p=lorem.sentences 2
 			.l-segment
-				%h2.m-hr-b Grid
+				%h2.m-hr-b Columns
 				.l-segment
 					%p=lorem.sentences 3
 					%code.block
@@ -51,6 +51,11 @@
 
 		%aside.l-sidebar
 			%h2.m-hr-a Sidebar
+			.l-segment
+				%h3.m-hr-b Navigation
+				%ul.nav-group
+					- for i in 1..9
+						%li=link_to lorem.words(2), '#'
 			- for i in 1..2
 				.l-segment
 					%h3.m-hr-b Segment
