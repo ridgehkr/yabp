@@ -1,18 +1,3 @@
-// media elements
-.media-feature {
-	width: 100%;
-	max-width: none;
-	.media-wrap { // wrap the media item with this class
-		display: block;
-		text-align: center;
-		margin-bottom: $content-spacing;
-	}
-	.proceed { // use as a "more" link for the media element
-		display: block;
-		margin: $content-spacing 0;
-	}
-}
-
 // preserves the aspect ratio of videos embedded via YouTube, Vimeo, etc.
 // wrap embedded videos with a block-level element of this class
 .m-media-embed {

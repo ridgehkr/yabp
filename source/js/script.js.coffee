@@ -1,4 +1,5 @@
 #= require google-analytics
+#= require libs/dummyimage-1.2.2.pack
 
 class Application
 	constructor: ->
@@ -8,6 +9,7 @@ class Application
 	
 	plugins: ->
 		# initialize plugins here
+		do DummyImage.generate
 
 	content: ->
 		# initialize content-helping JS here

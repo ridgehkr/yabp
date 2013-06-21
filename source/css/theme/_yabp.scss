@@ -42,9 +42,53 @@ a {
 
 // design-y, so sticking in the theme
 .m-main-nav {
+	background: #ececec;
 	@media (min-width:$medium) {
 		.nav-item + .nav-item {
 			border-left: 1px dotted #ccc;
 		}
+	}
+}
+
+// display styles for demoing evenly-spaced grid
+.l-grid-item {
+	background: #ececec;
+	padding-bottom: percent(1, 5.5);
+	margin-bottom: (1 / 7) * (1 / 7) * 100%;
+}
+
+// drop-shadow for bottom of element
+.bottom-drop-shadow {
+	position:relative;
+	background: white;
+	&:after {
+		content:"";
+		position:absolute;
+		z-index:-1;
+		bottom: 0;
+		width: 90%;
+		height: 50%;
+		left: 5%;
+		right: 5%;
+		@include border-radius(100%);
+		@include box-shadow(rgba(0,0,0,0.6) 0 0 4.8rem);
+	}
+}
+
+// drop-shadow for top of element
+.top-drop-shadow {
+	position:relative;
+	background: white;
+	&:before {
+		content:"";
+		position:absolute;
+		z-index:-1;
+		top: 0;
+		width: 90%;
+		height: 50%;
+		left: 5%;
+		right: 5%;
+		@include border-radius(100%);
+		@include box-shadow(rgba(0,0,0,0.6) 0 0 4.8rem);
 	}
 }
