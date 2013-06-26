@@ -60,7 +60,7 @@ end
 # end
 
 # LiveReload
-activate :livereload
+# activate :livereload
 
 # Change the CSS directory
 set :css_dir, "css"

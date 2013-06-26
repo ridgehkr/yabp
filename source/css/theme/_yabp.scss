@@ -3,7 +3,7 @@ a {
 }
 
 .m-hr-a {
-	font-family: $fontin;
+	font-family: $sans-serif;
 	font-weight: normal;
 	color: $text-color;
 	padding: 0;
@@ -13,7 +13,7 @@ a {
 	}
 }
 .m-hr-b {
-	font-family: $fontin;
+	font-family: $sans-serif;
 	font-weight: lighter;
 	color: $text-color;
 	margin: 0;
@@ -60,7 +60,7 @@ a {
 // drop-shadow for bottom of element
 .bottom-drop-shadow {
 	position:relative;
-	background: white;
+	background: #fff;
 	&:after {
 		content:"";
 		position:absolute;
@@ -71,14 +71,14 @@ a {
 		left: 5%;
 		right: 5%;
 		@include border-radius(100%);
-		@include box-shadow(rgba(0,0,0,0.6) 0 0 4.8rem);
+		@include box-shadow(rgba(0,0,0,0.4) 0 0 4.8rem);
 	}
 }
 
 // drop-shadow for top of element
 .top-drop-shadow {
 	position:relative;
-	background: white;
+	background: #fff;
 	&:before {
 		content:"";
 		position:absolute;
@@ -89,6 +89,6 @@ a {
 		left: 5%;
 		right: 5%;
 		@include border-radius(100%);
-		@include box-shadow(rgba(0,0,0,0.6) 0 0 4.8rem);
+		@include box-shadow(rgba(0,0,0,0.4) 0 0 4.8rem);
 	}
 }

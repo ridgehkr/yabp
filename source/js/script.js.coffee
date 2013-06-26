@@ -1,27 +1,7 @@
 #= require google-analytics
 #= require libs/dummyimage-1.2.2.pack
+#= require libs/matchMedia
 
-class Application
-	constructor: ->
-		# initial bindings and plug inits go here
-		do @plugins
-		do @content
-	
-	plugins: ->
-		# initialize plugins here
-		do DummyImage.generate
-
-	content: ->
-		# initialize content-helping JS here
-
-		# Application.touch_enabled - true if the client is using a touch device
-
-		# use this with a grain of salt - http://www.stucox.com/blog/you-cant-detect-a-touchscreen/
-		@touch_enabled = 'ontouchstart' of document
-
-$ ->
-	# kick off all JS to be executed at page load and get the app ready for use
-	yabp = new Application
 
 # Rewritten version for correcting a screen-zoom issue on rotation in iOS
 # By @mathias, @cheeaun and @jdalton
@@ -41,3 +21,43 @@ $ ->
 		scales = [0.25, 1.6]
 		doc[addEvent](type, fix, true)
 )(document)
+
+
+class Breakpoints
+	constructor: ->
+		@points = # breakpoints matching what's set inside base/_base.scss
+			smallest: '400px'
+			small: '600px'
+			medium: '800px'
+			large: '1200px'
+
+	# React with a callback function at a breakpoint
+	#
+	# target_bp: the Breakpoints.points value to respond to
+	# relation: respond above or below breakpoint
+	# callback: function to execute if breakpoint params are met
+	react: (target_bp = @points.large, relation = 'above', callback) ->
+		# format: 'all and (@relation-width: @target_bp)'
+		query_string = 'all and (' + (if relation == 'above' then 'min' else 'max') + '-width: ' + target_bp + ')'
+		mql query_string, (mql) ->
+			callback?() if mql.matches
+
+class Application
+	constructor: ->
+		do @plugins
+		do @content
+	
+	# initialize plugins here
+	plugins: ->
+		# placeholder images
+		do DummyImage.generate
+
+	# initialize content-helping JS here
+	content: ->
+
+$ ->
+	yabp = new Application
+
+	bp = new Breakpoints
+	bp.react bp.points.large, 'above', ->
+		console?.log "Hi! I'm your browser and I'm wider than #{bp.points.large}"
